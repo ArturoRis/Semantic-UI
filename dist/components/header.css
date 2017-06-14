@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-5.2 - Header
+ * # Semantic UI 2.2.7-7 - Header
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -110,7 +110,7 @@
 ---------------*/
 
 .ui.header .ui.label {
-  font-size: '';
+  font-size: medium;
   margin-left: 0.5rem;
   vertical-align: middle;
 }
@@ -211,7 +211,7 @@ h5.ui.header .sub.header {
   font-weight: bold;
   font-size: 0.85714286em;
   text-transform: uppercase;
-  color: '';
+  color: initial;
 }
 .ui.small.sub.header {
   font-size: 0.78571429em;
@@ -301,13 +301,11 @@ h5.ui.header .sub.header {
   color: rgba(255, 255, 255, 0.8);
 }
 .ui.inverted.attached.header {
-  background: #545454 -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   background: #545454 linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   box-shadow: none;
   border-color: transparent;
 }
 .ui.inverted.block.header {
-  background: #545454 -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   background: #545454 linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   box-shadow: none;
 }

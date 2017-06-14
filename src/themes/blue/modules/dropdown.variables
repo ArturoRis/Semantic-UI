@@ -216,7 +216,7 @@
      Search
 --------------*/
 
-@searchMinWidth: '';
+@searchMinWidth: auto;
 
 /* Search Selection */
 @searchSelectionLineHeight: @inputLineHeight;
@@ -256,8 +256,8 @@
 @multipleSelectionSearchStartWidth: (@glyphWidth * 2);
 
 /* Dropdown Icon */
-@multipleSelectionDropdownIconMargin: '';
-@multipleSelectionDropdownIconPadding: '';
+@multipleSelectionDropdownIconMargin: 0;
+@multipleSelectionDropdownIconPadding: 0;
 
 @multipleSelectionSearchAfterLabelDistance: @relative2px;
 

@@ -124,7 +124,7 @@
 ;
 @selectionCloseRight: 0em;
 @selectionCloseIconOpacity: 0.8;
-@selectionCloseIconColor: '';
+@selectionCloseIconColor: initial;
 @selectionCloseIconHoverOpacity: 1;
 @selectionCloseIconHoverColor: @red;
 

@@ -216,7 +216,7 @@
      Search
 --------------*/
 
-@searchMinWidth: '';
+@searchMinWidth: auto;
 
 /* Search Selection */
 @searchSelectionLineHeight: @inputLineHeight;

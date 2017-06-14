@@ -86,7 +86,7 @@
 
 /* Arrow */
 [data-tooltip]:before {
-  pointer-events: none;
+ // pointer-events : none;
   position: absolute;
   content: '';
   font-size: @medium;
@@ -102,7 +102,7 @@
 
 /* Popup */
 [data-tooltip]:after {
-  pointer-events: none;
+ // pointer-events : none;
   content: attr(data-tooltip);
   position: absolute;
   text-transform: none;
@@ -146,7 +146,7 @@
 /* Animation */
 [data-tooltip]:before,
 [data-tooltip]:after {
-  pointer-events: none;
+ // pointer-events : none;
   visibility: hidden;
 }
 [data-tooltip]:before {
@@ -167,7 +167,7 @@
 [data-tooltip]:hover:before,
 [data-tooltip]:hover:after {
   visibility: visible;
-  pointer-events: auto;
+ // pointer-events : auto;
 }
 [data-tooltip]:hover:before {
   transform: rotate(45deg) scale(1) !important;

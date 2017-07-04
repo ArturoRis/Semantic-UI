@@ -243,7 +243,7 @@
 ---------------*/
 
 .ui.definition.table thead:not(.full-width) th:first-child {
- // pointer-events : none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   background: @definitionHeaderBackground;
   font-weight: @definitionHeaderFontWeight;
   color: @definitionHeaderColor;
@@ -251,7 +251,7 @@
 }
 
 .ui.definition.table tfoot:not(.full-width) th:first-child {
- // pointer-events : none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   background: @definitionFooterBackground;
   font-weight: @definitionFooterFontWeight;
   color: @definitionFooterColor;
@@ -376,7 +376,7 @@
 .ui.table tr td.disabled,
 .ui.table tr.disabled:hover,
 .ui.table tr:hover td.disabled {
- // pointer-events : none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   color: @disabledTextColor;
 }
 
@@ -967,7 +967,7 @@
 .ui.inverted.table tr td.disabled,
 .ui.inverted.table tr.disabled:hover td,
 .ui.inverted.table tr:hover td.disabled {
- // pointer-events : none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   color: @invertedDisabledTextColor;
 }
 

@@ -332,7 +332,7 @@ ol.ui.list ol li,
 
 .ui.list .list > .disabled.item,
 .ui.list > .disabled.item {
- // pointer-events : none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   color: @disabledColor !important;
 }
 .ui.inverted.list .list > .disabled.item,
@@ -559,7 +559,7 @@ ul.ui.list li:before,
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list > .item:before {
   //user-select: none;
- // pointer-events : none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   position: absolute;
   top: auto;
   left: auto;
@@ -629,7 +629,7 @@ ol.ui.list li:before,
   top: auto;
   left: auto;
   //user-select: none;
- // pointer-events : none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   margin-left: -(@orderedCountDistance);
   counter-increment: @orderedCountName;
   content: @orderedCountContent;

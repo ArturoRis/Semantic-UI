@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-7 - Segment
+ * # Semantic UI 2.2.7-9 - Segment
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -390,6 +390,7 @@
 .ui.loading.segment {
   position: relative;
   cursor: default;
+  pointer-events: none;
   text-shadow: none !important;
   color: transparent !important;
   transition: all 0s linear;

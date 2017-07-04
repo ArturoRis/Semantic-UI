@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-7 - Step
+ * # Semantic UI 2.2.7-9 - Step
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -355,6 +355,7 @@
 .ui.steps .disabled.step {
   cursor: auto;
   background: #FFFFFF;
+  pointer-events: none;
 }
 .ui.steps .disabled.step,
 .ui.steps .disabled.step .title,

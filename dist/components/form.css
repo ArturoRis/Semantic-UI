@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-7 - Form
+ * # Semantic UI 2.2.7-9 - Form
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -569,6 +569,7 @@
 .ui.form .disabled.fields .field,
 .ui.form .disabled.field,
 .ui.form .field :disabled {
+  pointer-events: none;
   opacity: 0.2;
 }
 .ui.form .field.disabled > label,
@@ -586,6 +587,7 @@
 .ui.loading.form {
   position: relative;
   cursor: default;
+  pointer-events: none;
 }
 .ui.loading.form:before {
   position: absolute;

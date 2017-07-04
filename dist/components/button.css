@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-7 - Button
+ * # Semantic UI 2.2.7-9 - Button
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -116,6 +116,7 @@
   text-shadow: none !important;
   color: transparent !important;
   opacity: 1;
+  pointer-events: auto;
   transition: all 0s linear, opacity 0.2s ease;
 }
 .ui.loading.button:before {
@@ -177,6 +178,7 @@
   opacity: 0.2 !important;
   background-image: none !important;
   box-shadow: none !important;
+  pointer-events: none !important;
 }
 
 /* Basic Group With Disabled */

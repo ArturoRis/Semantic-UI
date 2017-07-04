@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-7 - Popup
+ * # Semantic UI 2.2.7-9 - Popup
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -72,6 +72,7 @@
 
 /* Arrow */
 [data-tooltip]:before {
+  pointer-events: none;
   position: absolute;
   content: '';
   font-size: 1rem;
@@ -85,6 +86,7 @@
 
 /* Popup */
 [data-tooltip]:after {
+  pointer-events: none;
   content: attr(data-tooltip);
   position: absolute;
   text-transform: none;
@@ -124,6 +126,7 @@
 /* Animation */
 [data-tooltip]:before,
 [data-tooltip]:after {
+  pointer-events: none;
   visibility: hidden;
 }
 [data-tooltip]:before {
@@ -140,6 +143,7 @@
 [data-tooltip]:hover:before,
 [data-tooltip]:hover:after {
   visibility: visible;
+  pointer-events: auto;
 }
 [data-tooltip]:hover:before {
   transform: rotate(45deg) scale(1) !important;

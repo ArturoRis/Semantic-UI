@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-7 - List
+ * # Semantic UI 2.2.7-9 - List
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -317,6 +317,7 @@ ol.ui.list ol li,
 
 .ui.list .list > .disabled.item,
 .ui.list > .disabled.item {
+  pointer-events: none;
   color: rgba(40, 40, 40, 0.3) !important;
 }
 .ui.inverted.list .list > .disabled.item,
@@ -543,6 +544,7 @@ ul.ui.list li,
 ul.ui.list li:before,
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list > .item:before {
+  pointer-events: none;
   position: absolute;
   top: auto;
   left: auto;
@@ -609,6 +611,7 @@ ol.ui.list li:before,
   position: absolute;
   top: auto;
   left: auto;
+  pointer-events: none;
   margin-left: -1.25rem;
   counter-increment: ordered;
   content: counters(ordered, ".") " ";

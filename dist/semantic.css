@@ -7522,7 +7522,7 @@ a.ui.inverted.grey.header:hover {
 }
 
 /*
- * Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
+ * Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  * License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 
@@ -7735,10 +7735,6 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
   content: "\f1e5";
 }
 
-.ifix.icon.wifi:before {
-  content: "\f1eb";
-}
-
 .ifix.icon.alarm.mute:before {
   content: "\f1f6";
 }
@@ -7841,6 +7837,70 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 
 .ifix.icon.percent:before {
   content: "\f295";
+}
+
+.ifix.icon.handshake:before {
+  content: "\f2b5";
+}
+
+.ifix.icon.open.envelope:before {
+  content: "\f2b6";
+}
+
+.ifix.icon.open.envelope.outline:before {
+  content: "\f2b7";
+}
+
+.ifix.icon.address.book:before {
+  content: "\f2b9";
+}
+
+.ifix.icon.address.book.outline:before {
+  content: "\f2ba";
+}
+
+.ifix.icon.address.card:before {
+  content: "\f2bb";
+}
+
+.ifix.icon.address.card.outline:before {
+  content: "\f2bc";
+}
+
+.ifix.icon.id.badge:before {
+  content: "\f2c1";
+}
+
+.ifix.icon.id.card:before {
+  content: "\f2c2";
+}
+
+.ifix.icon.id.card.outline:before {
+  content: "\f2c3";
+}
+
+.ifix.icon.podcast:before {
+  content: "\f2ce";
+}
+
+.ifix.icon.window.maximize:before {
+  content: "\f2d0";
+}
+
+.ifix.icon.window.minimize:before {
+  content: "\f2d1";
+}
+
+.ifix.icon.window.restore:before {
+  content: "\f2d2";
+}
+
+.ifix.icon.window.close:before {
+  content: "\f2d3";
+}
+
+.ifix.icon.window.close.outline:before {
+  content: "\f2d4";
 }
 
 /* User Actions */
@@ -8147,6 +8207,18 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 
 .ifix.icon.spy:before {
   content: "\f21b";
+}
+
+.ifix.icon.user.circle:before {
+  content: "\f2bd";
+}
+
+.ifix.icon.user.circle.outline:before {
+  content: "\f2be";
+}
+
+.ifix.icon.user.outline:before {
+  content: "\f2c0";
 }
 
 /* Gender & Sexuality */
@@ -8475,6 +8547,38 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 
 .ifix.icon.tv:before {
   content: "\f26c";
+}
+
+.ifix.icon.thermometer.full:before {
+  content: "\f2c7";
+}
+
+.ifix.icon.thermometer.three.quarters:before {
+  content: "\f2c8";
+}
+
+.ifix.icon.thermometer.half:before {
+  content: "\f2c9";
+}
+
+.ifix.icon.thermometer.quarter:before {
+  content: "\f2ca";
+}
+
+.ifix.icon.thermometer.empty:before {
+  content: "\f2cb";
+}
+
+.ifix.icon.shower:before {
+  content: "\f2cc";
+}
+
+.ifix.icon.bathtub:before {
+  content: "\f2cd";
+}
+
+.ifix.icon.snowflake:before {
+  content: "\f2dc";
 }
 
 /* Shapes */
@@ -9025,6 +9129,10 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
   content: "\f1c0";
 }
 
+.ifix.icon.wifi:before {
+  content: "\f1eb";
+}
+
 .ifix.icon.server:before {
   content: "\f233";
 }
@@ -9039,6 +9147,10 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 
 .ifix.icon.bluetooth.alternative:before {
   content: "\f294";
+}
+
+.ifix.icon.microchip:before {
+  content: "\f2db";
 }
 
 /* Rating */
@@ -10153,6 +10265,58 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
   content: "\f2b4";
 }
 
+.ifix.icon.linode:before {
+  content: "\f2b8";
+}
+
+.ifix.icon.quora:before {
+  content: "\f2c4";
+}
+
+.ifix.icon.free.code.camp:before {
+  content: "\f2c5";
+}
+
+.ifix.icon.telegram:before {
+  content: "\f2c6";
+}
+
+.ifix.icon.bandcamp:before {
+  content: "\f2d5";
+}
+
+.ifix.icon.grav:before {
+  content: "\f2d6";
+}
+
+.ifix.icon.etsy:before {
+  content: "\f2d7";
+}
+
+.ifix.icon.imdb:before {
+  content: "\f2d8";
+}
+
+.ifix.icon.ravelry:before {
+  content: "\f2d9";
+}
+
+.ifix.icon.eercast:before {
+  content: "\f2da";
+}
+
+.ifix.icon.superpowers:before {
+  content: "\f2dd";
+}
+
+.ifix.icon.wpexplorer:before {
+  content: "\f2de";
+}
+
+.ifix.icon.meetup:before {
+  content: "\f2e0";
+}
+
 /*******************************
             Aliases
 *******************************/
@@ -11031,6 +11195,42 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 
 .ifix.icon.fa:before {
   content: "\f2b4";
+}
+
+.ifix.icon.vcard:before {
+  content: "\f2bb";
+}
+
+.ifix.icon.vcard.outline:before {
+  content: "\f2bc";
+}
+
+.ifix.icon.drivers.license:before {
+  content: "\f2c2";
+}
+
+.ifix.icon.drivers.license.outline:before {
+  content: "\f2c3";
+}
+
+.ifix.icon.thermometer:before {
+  content: "\f2c7";
+}
+
+.ifix.icon.s15:before {
+  content: "\f2cd";
+}
+
+.ifix.icon.bath:before {
+  content: "\f2cd";
+}
+
+.ifix.icon.times.rectangle:before {
+  content: "\f2d3";
+}
+
+.ifix.icon.times.rectangle.outline:before {
+  content: "\f2d4";
 }
 /*!
  * # Semantic UI 2.2.7-10 - Image

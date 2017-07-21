@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-5.2 - Container
+ * # Semantic UI 2.2.7-9 - Container
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -129,9 +129,8 @@
 }
 .ui.justified.container {
   text-align: justify;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  -ms-hyphens: auto;
+      hyphens: auto;
 }
 
 

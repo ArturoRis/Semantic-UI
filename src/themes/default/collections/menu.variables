@@ -63,7 +63,7 @@
 @dropdownIconDistance: 1em;
 
 /* Header */
-@headerBackground: '';
+@headerBackground: none;
 @headerWeight: bold;
 @headerTextTransform: normal;
 
@@ -433,10 +433,11 @@
 @attachedWidth: ~"calc(100% + "-@attachedHorizontalOffset * 2~")";
 @attachedBoxShadow: none;
 @attachedBorder: @borderWidth solid @solidBorderColor;
-@attachedBottomBoxShadow:
-  @boxShadow,
+@attachedBottomBoxShadow:@boxShadow;
+/*,
+  
   @attachedBoxShadow
-;
+;*/
 
 /* Resize large sizes */
 @mini: @11px;

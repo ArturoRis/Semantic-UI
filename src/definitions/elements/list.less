@@ -332,7 +332,7 @@ ol.ui.list ol li,
 
 .ui.list .list > .disabled.item,
 .ui.list > .disabled.item {
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   color: @disabledColor !important;
 }
 .ui.inverted.list .list > .disabled.item,
@@ -558,8 +558,8 @@ ul.ui.list li,
 ul.ui.list li:before,
 .ui.bulleted.list .list > .item:before,
 .ui.bulleted.list > .item:before {
-  user-select: none;
-  pointer-events: none;
+  //user-select: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   position: absolute;
   top: auto;
   left: auto;
@@ -628,8 +628,8 @@ ol.ui.list li:before,
   position: absolute;
   top: auto;
   left: auto;
-  user-select: none;
-  pointer-events: none;
+  //user-select: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   margin-left: -(@orderedCountDistance);
   counter-increment: @orderedCountName;
   content: @orderedCountContent;
@@ -843,11 +843,11 @@ ol.ui.horizontal.list li:before,
 /* Inverted */
 .ui.celled.inverted.list > .item,
 .ui.celled.inverted.list > .list {
-  border-color: @celledInvertedBorder;
+  border: @celledInvertedBorder;
 }
 .ui.celled.inverted.horizontal.list .list > .item,
 .ui.celled.inverted.horizontal.list > .item {
-  border-color: @celledInvertedBorder;
+  border: @celledInvertedBorder;
 }
 
 /*-------------------

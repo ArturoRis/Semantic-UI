@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-5.2 - Table
+ * # Semantic UI 2.2.7-9 - Table
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -43,7 +43,6 @@
 /* Table Content */
 .ui.table th,
 .ui.table td {
-  -webkit-transition: background 0.2s ease, color 0.2s ease;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -58,7 +57,7 @@
   color: rgba(0, 0, 0, 0.87);
   padding: 0.92857143em 0.78571429em;
   vertical-align: inherit;
-  font-style: none;
+  font-style: inherit;
   font-weight: bold;
   text-transform: none;
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
@@ -242,8 +241,8 @@
 .ui.definition.table tfoot:not(.full-width) th:first-child {
   pointer-events: none;
   background: transparent;
-  font-weight: rgba(0, 0, 0, 0.4);
-  color: normal;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.4);
   box-shadow: 1px 1px 0px 1px #FFFFFF;
 }
 
@@ -261,12 +260,12 @@
   background: rgba(0, 0, 0, 0.03);
   font-weight: bold;
   color: rgba(0, 0, 0, 0.95);
-  text-transform: '';
-  box-shadow: '';
-  text-align: '';
+  text-transform: none;
+  box-shadow: none;
+  text-align: inherit;
   font-size: 1em;
-  padding-left: '';
-  padding-right: '';
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Fix 2nd Column */
@@ -567,7 +566,7 @@
   margin-top: 0em;
   top: 0px;
   margin-bottom: 1em;
-  box-shadow: none, none;
+  box-shadow: none;
   border-radius: 0em 0em 0.28571429rem 0.28571429rem;
 }
 .ui[class*="bottom attached"].table:last-child {
@@ -866,13 +865,6 @@
 .ui.sortable.table thead th:first-child {
   border-left: none;
 }
-.ui.sortable.table thead th.sorted,
-.ui.sortable.table thead th.sorted:hover {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
 .ui.sortable.table thead th:after {
   display: none;
   font-style: normal;
@@ -919,12 +911,10 @@
 
 /* Inverted */
 .ui.inverted.sortable.table thead th.sorted {
-  background: rgba(255, 255, 255, 0.15) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   background: rgba(255, 255, 255, 0.15) linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   color: #ffffff;
 }
 .ui.inverted.sortable.table thead th:hover {
-  background: rgba(255, 255, 255, 0.08) -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   background: rgba(255, 255, 255, 0.08) linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   color: #ffffff;
 }
@@ -1011,7 +1001,7 @@
 }
 .ui[class*="very basic"].table:not(.sortable):not(.striped) th,
 .ui[class*="very basic"].table:not(.sortable):not(.striped) td {
-  padding: '';
+  padding: 0;
 }
 .ui[class*="very basic"].table:not(.sortable):not(.striped) th:first-child,
 .ui[class*="very basic"].table:not(.sortable):not(.striped) td:first-child {

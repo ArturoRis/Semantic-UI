@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-5.2 - Progress Bar
+ * # Semantic UI 2.2.7-9 - Progress Bar
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -46,7 +46,6 @@
   min-width: 2em;
   background: #888888;
   border-radius: 0.28571429rem;
-  -webkit-transition: width 0.2s ease, background-color 0.2s ease;
   transition: width 0.2s ease, background-color 0.2s ease;
 }
 
@@ -81,7 +80,6 @@
   text-shadow: none;
   margin-top: 0.2em;
   text-align: center;
-  -webkit-transition: color 0.4s ease;
   transition: color 0.4s ease;
 }
 
@@ -183,8 +181,7 @@
 }
 .ui.progress.success .bar,
 .ui.progress.success .bar::after {
-  -webkit-animation: none !important;
-          animation: none !important;
+  animation: none !important;
 }
 .ui.progress.success > .label {
   color: #1A531B;
@@ -199,8 +196,7 @@
 }
 .ui.progress.warning .bar,
 .ui.progress.warning .bar::after {
-  -webkit-animation: none !important;
-          animation: none !important;
+  animation: none !important;
 }
 .ui.progress.warning > .label {
   color: #794B02;
@@ -215,8 +211,7 @@
 }
 .ui.progress.error .bar,
 .ui.progress.error .bar::after {
-  -webkit-animation: none !important;
-          animation: none !important;
+  animation: none !important;
 }
 .ui.progress.error > .label {
   color: #912D2B;
@@ -240,18 +235,7 @@
   bottom: 0px;
   background: #FFFFFF;
   border-radius: 0.28571429rem;
-  -webkit-animation: progress-active 2s ease infinite;
-          animation: progress-active 2s ease infinite;
-}
-@-webkit-keyframes progress-active {
-  0% {
-    opacity: 0.3;
-    width: 0;
-  }
-  100% {
-    opacity: 0;
-    width: 100%;
-  }
+  animation: progress-active 2s ease infinite;
 }
 @keyframes progress-active {
   0% {
@@ -273,8 +257,7 @@
 }
 .ui.disabled.progress .bar,
 .ui.disabled.progress .bar::after {
-  -webkit-animation: none !important;
-          animation: none !important;
+  animation: none !important;
 }
 
 

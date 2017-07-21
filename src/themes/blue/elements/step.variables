@@ -8,7 +8,7 @@
 
 @stepMargin: 1em 0em;
 @stepsBorderRadius: @defaultBorderRadius;
-@stepsBackground: '';
+@stepsBackground: transparent;
 @stepsBoxShadow: none;
 @stepsBorder: 1px solid @borderColor;
 
@@ -43,7 +43,7 @@
 /* Icon */
 @iconDistance: 1rem;
 @iconSize: 2.5em;
-@iconAlign: middle;
+@iconAlign: center;
 
 /* Title */
 @titleFontFamily: @headerFont;

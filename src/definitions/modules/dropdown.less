@@ -63,7 +63,7 @@
   border-radius: @menuBorderRadius;
   transition: @menuTransition;
   z-index: @menuZIndex;
-  will-change: transform, opacity;
+  // will-change: transform, opacity;
 }
 
 .ui.dropdown .menu > * {
@@ -589,7 +589,7 @@ select.ui.dropdown {
 }
 .ui.search.dropdown.active > .text,
 .ui.search.dropdown.visible > .text {
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
 }
 
 /* Filtered Text */
@@ -649,7 +649,7 @@ select.ui.dropdown {
 
 /* Selection Label */
 .ui.multiple.dropdown > .label {
-  user-select: none;
+  //user-select: none;
   display: inline-block;
   vertical-align: top;
   white-space: normal;
@@ -922,7 +922,7 @@ select.ui.dropdown {
 .ui.disabled.dropdown,
 .ui.dropdown .menu > .disabled.item {
   cursor: default;
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   opacity: @disabledOpacity;
 }
 
@@ -1206,7 +1206,7 @@ select.ui.dropdown {
 .ui.pointing.dropdown > .menu:after {
   display: block;
   position: absolute;
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   content: '';
   visibility: visible;
   transform: rotate(45deg);

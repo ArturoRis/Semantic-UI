@@ -127,7 +127,7 @@
 @invertedBorder: none;
 @invertedBoxShadow: none;
 
-@invertedHeaderBackground: none;
+@invertedHeaderBackground: transparent;
 @invertedHeaderColor: @white;
 @invertedArrowColor: @invertedBackground;
 

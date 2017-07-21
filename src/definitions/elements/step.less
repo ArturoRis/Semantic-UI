@@ -156,7 +156,7 @@
   align-self: @iconAlign;
 }
 .ui.steps .step > .icon ~ .content {
-  flex-grow: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 /* Horizontal Icon */
@@ -369,7 +369,7 @@
 .ui.steps .disabled.step {
   cursor: auto;
   background: @disabledBackground;
-  pointer-events: none;
+  pointer-events : none; //Per tutti i disabled serve
 }
 .ui.steps .disabled.step,
 .ui.steps .disabled.step .title,

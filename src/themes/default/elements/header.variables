@@ -42,7 +42,7 @@
 @iconSize: 1.5em;
 @iconOffset: @lineHeightOffset;
 @iconMargin: 0.75rem;
-@iconAlignment: middle;
+@iconAlignment: center;
 
 /* Image */
 @imageWidth: 2.5em;

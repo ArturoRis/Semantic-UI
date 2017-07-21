@@ -31,7 +31,7 @@
 @iconLabelSize: 1.5em;
 @iconLabelPadding: 0.25em;
 @iconLabelBackground: none;
-@iconLabelBorderRadius: none;
+@iconLabelBorderRadius: 0;
 @iconLabelBorder: none;
 @iconLabelColor: rgba(0, 0, 0, 0.6);
 
@@ -67,7 +67,7 @@
 @summaryImageWidth: auto;
 @summaryImageHeight: 10em;
 @summaryImageMargin: -0.25em 0.25em 0em 0em;
-@summaryImageVerticalAlign: middle;
+@summaryImageVerticalAlign: center;
 @summaryImageBorderRadius: 0.25em;
 
 /* Summary Date */
@@ -119,13 +119,13 @@
 @metadataElementSpacing: 0.75em;
 
 /* Like */
-@likeColor: '';
+@likeColor: initial;
 @likeHoverColor: #FF2733;
 @likeActiveColor: #EF404A;
 @likeTransition: 0.2s color ease;
 
 /* Metadata Divider */
-@metadataDivider: '';
+@metadataDivider: none;
 @metadataDividerColor: rgba(0, 0, 0, 0.2);
 @metadataDividerOffset: -1em;
 

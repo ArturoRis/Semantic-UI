@@ -18,7 +18,7 @@
 @width: 100%;
 @boxShadow: none;
 @border: none;
-@zIndex: '';
+@zIndex: auto;
 @transition: box-shadow @defaultDuration @defaultEasing;
 
 /* Responsive */
@@ -42,8 +42,8 @@
 /* Image */
 @imageDisplay: block;
 @imageFloat: none;
-@imageMaxHeight: '';
-@imageVerticalAlign: top;
+@imageMaxHeight: none;
+@imageVerticalAlign: flex-start;
 @imageMargin: 0em;
 @imagePadding: 0em;
 @imageBorder: none;
@@ -53,7 +53,7 @@
 
 /* Content */
 @contentDisplay: block;
-@contentVerticalAlign: top;
+@contentVerticalAlign: flex-start;
 
 @contentWidth: auto;
 @contentOffset: 0em;
@@ -94,21 +94,21 @@
 @headerLinkHoverColor: @linkHoverColor;
 @metaLinkColor: @lightTextColor;
 @metaLinkHoverColor: @textColor;
-@contentLinkColor: '';
-@contentLinkHoverColor: '';
+@contentLinkColor: initial;
+@contentLinkHoverColor: initial;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 
 
 /* Description */
 @descriptionDistance: 0.6em;
-@descriptionMaxWidth: auto;
+@descriptionMaxWidth: none;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;
 @descriptionColor: @textColor;
 
 /* Content Image */
-@contentImageWidth: '';
-@contentImageVerticalAlign: middle;
+@contentImageWidth: auto;
+@contentImageVerticalAlign: center;
 
 /* Avatar Image */
 @avatarSize: @contentImageWidth;

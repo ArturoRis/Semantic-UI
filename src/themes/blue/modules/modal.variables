@@ -44,14 +44,14 @@
 @contentBackground: #FFFFFF;
 
 /* Image / Description */
-@imageWidth: '';
+@imageWidth: auto;
 @imageIconSize: 8rem;
-@imageVerticalAlign: top;
+@imageVerticalAlign: flex-start;
 
 @descriptionDistance: 2em;
-@descriptionMinWidth: '';
+@descriptionMinWidth: auto;
 @descriptionWidth: auto;
-@descriptionVerticalAlign: top;
+@descriptionVerticalAlign: flex-start;
 
 /* Modal Actions */
 @actionBorder: 1px solid @borderColor;

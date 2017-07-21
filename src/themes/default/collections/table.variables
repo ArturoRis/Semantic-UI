@@ -46,7 +46,7 @@
 @headerColor: @textColor;
 @headerVerticalPadding: @relativeSmall;
 @headerHorizontalPadding: @cellHorizontalPadding;
-@headerFontStyle: none;
+@headerFontStyle: inherit;
 @headerFontWeight: bold;
 @headerTextTransform: none;
 @headerBoxShadow: none;
@@ -95,7 +95,7 @@
 @definitionColumnFontSize: @relativeMedium;
 @definitionColumnTextTransform: '';
 @definitionColumnBoxShadow: '';
-@definitionColumnTextAlign: '';
+@definitionColumnTextAlign: inherit;
 @definitionColumnHorizontalPadding: '';
 
 
@@ -154,10 +154,11 @@
 @attachedWidth: ~"calc(100% + "-@attachedHorizontalOffset * 2~")";
 @attachedBoxShadow: none;
 @attachedBorder: @borderWidth solid @solidBorderColor;
-@attachedBottomBoxShadow:
-  @boxShadow,
+@attachedBottomBoxShadow:@boxShadow;
+/*,
+  
   @attachedBoxShadow
-;
+;*/
 
 /* Striped */
 @stripedBackground: rgba(0, 0, 50, 0.02);
@@ -224,7 +225,7 @@
 @basicTableCellBackground: transparent;
 @basicTableHeaderDivider: none;
 @basicTableCellBorder: 1px solid rgba(0, 0, 0, 0.1);
-@basicTableCellPadding: '';
+@basicTableCellPadding: 0;
 @basicTableStripedBackground: @transparentBlack;
 
 /* Padded */

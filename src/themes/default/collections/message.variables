@@ -74,10 +74,11 @@
 @attachedXOffset: -1px;
 @attachedYOffset: -1px;
 @attachedBoxShadow: 0em 0em 0em @borderWidth @borderColor inset;
-@attachedBottomBoxShadow:
-  @attachedBoxShadow,
+@attachedBottomBoxShadow:@attachedBoxShadow;
+/*,
+  
   @subtleShadow
-;
+;*/
 
 /* Floating */
 @floatingBoxShadow:

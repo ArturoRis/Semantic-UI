@@ -43,7 +43,7 @@ body {
   font-size: @fontSize;
   line-height: @lineHeight;
   color: @textColor;
-  font-smoothing: @fontSmoothing;
+  // font-smoothing: @fontSmoothing;
 }
 
 
@@ -140,10 +140,10 @@ a:hover {
   background-color: @highlightBackground;
   color: @highlightColor;
 }
-::selection {
-  background-color: @highlightBackground;
-  color: @highlightColor;
-}
+// ::selection {
+//   background-color: @highlightBackground;
+//   color: @highlightColor;
+// }
 
 /* Form */
 textarea::-webkit-selection,
@@ -156,11 +156,11 @@ input::-moz-selection {
   background-color: @inputHighlightBackground;
   color: @inputHighlightColor;
 }
-textarea::selection,
-input::selection {
-  background-color: @inputHighlightBackground;
-  color: @inputHighlightColor;
-}
+// textarea::selection,
+// input::selection {
+//   background-color: @inputHighlightBackground;
+//   color: @inputHighlightColor;
+// }
 
 
 .loadUIOverrides();

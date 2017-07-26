@@ -26,7 +26,7 @@
   @borderShadow
 ;
 @border: none;
-@zIndex: '';
+@zIndex: auto;
 @transition:
   box-shadow @defaultDuration @defaultEasing,
   transform @defaultDuration @defaultEasing
@@ -70,7 +70,7 @@
 
 
 /* Header */
-@headerMargin: '';
+@headerMargin: 0;
 @headerFontWeight: bold;
 @headerFontSize: @relativeBig;
 @headerLineHeightOffset: -(@lineHeight - 1em) / 2;
@@ -93,8 +93,8 @@
 @likeActiveColor: #FF2733;
 
 /* Links */
-@contentLinkColor: '';
-@contentLinkHoverColor: '';
+@contentLinkColor: initial;
+@contentLinkHoverColor: initial;
 @contentLinkTransition: color @defaultDuration @defaultEasing;
 
 @headerLinkColor: @headerColor;
@@ -108,8 +108,8 @@
 @descriptionColor: rgba(0, 0, 0, 0.68);
 
 /* Content Image */
-@contentImageWidth: '';
-@contentImageVerticalAlign: middle;
+@contentImageWidth: auto;
+@contentImageVerticalAlign: center;
 
 /* Avatar Image */
 @avatarSize: 2em;
@@ -120,7 +120,7 @@
 
 /* Dimmer */
 @dimmerZIndex: 10;
-@dimmerColor: '';
+@dimmerColor: initial;
 
 /* Additional Content */
 @extraDivider: 1px solid rgba(0, 0, 0, 0.05);

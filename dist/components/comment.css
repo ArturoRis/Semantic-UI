@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-6 - Comment
+ * # Semantic UI 2.2.7-12 - Comment
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -219,10 +219,8 @@
   top: 0px;
   right: 0px;
   left: auto;
-  -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 .ui.minimal.comments .comment > .content:hover > .actions {
   opacity: 1;

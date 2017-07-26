@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-6 - Site
+ * # Semantic UI 2.2.7-12 - Site
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -30,7 +30,6 @@ body {
   font-size: 14px;
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
-  font-smoothing: antialiased;
 }
 
 
@@ -124,10 +123,6 @@ a:hover {
   background-color: #C7DFF6;
   color: rgba(0, 0, 0, 0.87);
 }
-::selection {
-  background-color: #C7DFF6;
-  color: rgba(0, 0, 0, 0.87);
-}
 
 /* Form */
 textarea::-webkit-selection,
@@ -137,11 +132,6 @@ input::-webkit-selection {
 }
 textarea::-moz-selection,
 input::-moz-selection {
-  background-color: rgba(100, 100, 100, 0.4);
-  color: rgba(0, 0, 0, 0.87);
-}
-textarea::selection,
-input::selection {
   background-color: rgba(100, 100, 100, 0.4);
   color: rgba(0, 0, 0, 0.87);
 }

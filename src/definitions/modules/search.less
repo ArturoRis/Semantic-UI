@@ -284,7 +284,7 @@
 
 /* Remove input */
 .ui.search.selection > .icon.input > .remove.icon {
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   position: absolute;
   left: auto;
   opacity: 0;
@@ -296,7 +296,7 @@
 .ui.search.selection > .icon.input > .active.remove.icon {
   cursor: pointer;
   opacity: @selectionCloseIconOpacity;
-  pointer-events: auto;
+ pointer-events : auto; // Serve per disabilitare il click anche se forse w3c validator da problemi
 }
 .ui.search.selection > .icon.input:not([class*="left icon"]) > .icon ~ .remove.icon {
   right: @selectionCloseIconInputRight;
@@ -355,7 +355,7 @@
   background: @categoryNameBackground;
   font-family: @categoryNameFont;
   font-size: @categoryNameFontSize;
-  float: @categoryNameFontSize;
+  // float: @categoryNameFontSize;
   float: @categoryNameFloat;
   padding: @categoryNamePadding;
   font-weight: @categoryNameFontWeight;

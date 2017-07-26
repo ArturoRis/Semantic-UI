@@ -34,7 +34,7 @@
 *******************************/
 
 /* Horizontal / Vertical */
-@horizontalMargin: '';
+@horizontalMargin: 0;
 @horizontalDividerMargin: 1em;
 @horizontalRulerOffset: ~"calc(-50% - "(@horizontalDividerMargin)~")";
 

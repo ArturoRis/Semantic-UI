@@ -49,9 +49,9 @@
   border-radius: @borderRadius;
   box-shadow: @boxShadow;
 
-  user-select: none;
+  //user-select: none;
   transition: @transition;
-  will-change: @willChange;
+  // will-change: @willChange;
 
   -webkit-tap-highlight-color: @tapColor;
 }
@@ -135,7 +135,7 @@
   text-shadow: none !important;
   color: transparent !important;
   opacity: @loadingOpacity;
-  pointer-events: @loadingPointerEvents;
+  pointer-events : @loadingPointerEvents;
   transition: @loadingTransition;
 }
 .ui.loading.button:before {
@@ -206,7 +206,7 @@
   opacity: @disabledOpacity !important;
   background-image: none !important;
   box-shadow: none !important;
-  pointer-events: none !important;
+  pointer-events : none !important;
 }
 
 /* Basic Group With Disabled */
@@ -231,7 +231,7 @@
 }
 
 .ui.animated.button .content {
-  will-change: transform, opacity;
+  // will-change: transform, opacity;
 }
 .ui.animated.button .visible.content {
   position: relative;
@@ -744,7 +744,7 @@
   background: @basicActiveBackground !important;
   box-shadow: @basicActiveBoxShadow !important;
   color: @basicActiveTextColor;
-  box-shadow: @selectedBorderColor;
+  box-shadow: 0 0 0 0 @selectedBorderColor;
 }
 .ui.basic.buttons .active.button:hover,
 .ui.basic.active.button:hover {
@@ -753,13 +753,13 @@
 
 /* Vertical */
 .ui.basic.buttons .button:hover {
-  box-shadow: @basicHoverBoxShadow inset;
+  box-shadow: @basicHoverBoxShadow ;
 }
 .ui.basic.buttons .button:active {
-  box-shadow: @basicDownBoxShadow inset;
+  box-shadow: @basicDownBoxShadow ;
 }
 .ui.basic.buttons .active.button {
-  box-shadow: @selectedBorderColor inset;
+  box-shadow: 0 0 0 0 @selectedBorderColor ;
 }
 
 /* Standard Basic Inverted */

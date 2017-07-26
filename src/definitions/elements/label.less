@@ -504,8 +504,12 @@ a.ui.active.label:hover {
   background-image: @labelActiveHoverBackgroundImage;
   color: @labelActiveHoverTextColor;
 }
-.ui.labels a.active.label:ActiveHover:before,
-a.ui.active.label:ActiveHover:before {
+.ui.labels a.active.label:active:before,
+.ui.labels a.active.label:hover:before,
+.ui.labels a.active.label:active:before,
+.ui.labels a.active.label:hover:before,
+a.ui.active.label:active:before,
+a.ui.active.label:hover:before  {
   background-color: @labelActiveHoverBackgroundColor;
   background-image: @labelActiveHoverBackgroundImage;
   color: @labelActiveHoverTextColor;
@@ -1025,7 +1029,7 @@ a.ui.basic.label:hover {
   text-decoration: none;
   background: @basicHoverBackground;
   color: @basicHoverColor;
-  box-shadow: @basicHoverBorder;
+  border: @basicHoverBorder;
   box-shadow: @basicHoverBoxShadow;
 }
 
@@ -1108,7 +1112,7 @@ a.ui.basic.label:hover {
 .ui.pointing.label:before {
   background-color: inherit;
   background-image: inherit;
-  border-width: none;
+  border-width: 0;
   border-style: solid;
   border-color: @pointingBorderColor;
 }

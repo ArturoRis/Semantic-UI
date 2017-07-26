@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-6 - Divider
+ * # Semantic UI 2.2.7-12 - Divider
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -21,10 +21,6 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: rgba(0, 0, 0, 0.85);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -56,7 +52,7 @@
   display: table;
   white-space: nowrap;
   height: auto;
-  margin: '';
+  margin: 0;
   line-height: 1;
   text-align: center;
 }
@@ -91,8 +87,7 @@
   height: 50%;
   line-height: 0em;
   text-align: center;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .ui.vertical.divider:before,
 .ui.vertical.divider:after {
@@ -120,15 +115,14 @@
     display: table;
     white-space: nowrap;
     height: auto;
-    margin: '';
+    margin: 0;
     overflow: hidden;
     line-height: 1;
     text-align: center;
     position: static;
     top: 0;
     left: 0;
-    -webkit-transform: none;
-            transform: none;
+    transform: none;
   }
   .ui.stackable.grid .ui.vertical.divider:before,
   .ui.grid .stackable.row .ui.vertical.divider:before,

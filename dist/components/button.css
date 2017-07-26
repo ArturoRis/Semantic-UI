@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-6 - Button
+ * # Semantic UI 2.2.7-12 - Button
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -34,13 +34,7 @@
   text-decoration: none;
   border-radius: 0.28571429rem;
   box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   transition: opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  will-change: '';
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -71,8 +65,8 @@
 .ui.button:focus {
   background-color: #CACBCD;
   color: rgba(0, 0, 0, 0.8);
-  background-image: '' !important;
-  box-shadow: '' !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 .ui.button:focus .icon {
   opacity: 0.85;
@@ -85,9 +79,9 @@
 .ui.button:active,
 .ui.active.button:active {
   background-color: #BABBBC;
-  background-image: '';
+  background-image: none;
   color: rgba(0, 0, 0, 0.9);
-  box-shadow: 0px 0px 0px 1px transparent inset, none;
+  box-shadow: 0px 0px 0px 1px transparent inset;
 }
 
 /*--------------
@@ -123,7 +117,6 @@
   color: transparent !important;
   opacity: 1;
   pointer-events: auto;
-  -webkit-transition: all 0s linear, opacity 0.2s ease;
   transition: all 0s linear, opacity 0.2s ease;
 }
 .ui.loading.button:before {
@@ -145,10 +138,8 @@
   margin: -0.64285714em 0em 0em -0.64285714em;
   width: 1.28571429em;
   height: 1.28571429em;
-  -webkit-animation: button-spin 0.6s linear;
-          animation: button-spin 0.6s linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation: button-spin 0.6s linear;
+  animation-iteration-count: infinite;
   border-radius: 500rem;
   border-color: #FFFFFF transparent transparent;
   border-style: solid;
@@ -159,24 +150,12 @@
   background-color: transparent;
   box-shadow: none;
 }
-@-webkit-keyframes button-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 @keyframes button-spin {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 .ui.basic.loading.button:not(.inverted):before {
@@ -224,9 +203,6 @@
   vertical-align: middle;
   z-index: 1;
 }
-.ui.animated.button .content {
-  will-change: transform, opacity;
-}
 .ui.animated.button .visible.content {
   position: relative;
   margin-right: 1.5em;
@@ -239,7 +215,6 @@
 /* Horizontal */
 .ui.animated.button .visible.content,
 .ui.animated.button .hidden.content {
-  -webkit-transition: right 0.3s ease 0s;
   transition: right 0.3s ease 0s;
 }
 .ui.animated.button .visible.content {
@@ -266,14 +241,10 @@
 /* Vertical */
 .ui.vertical.animated.button .visible.content,
 .ui.vertical.animated.button .hidden.content {
-  -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease;
-  transition: top 0.3s ease, -webkit-transform 0.3s ease;
   transition: top 0.3s ease, transform 0.3s ease;
-  transition: top 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .ui.vertical.animated.button .visible.content {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
+  transform: translateY(0%);
   right: auto;
 }
 .ui.vertical.animated.button .hidden.content {
@@ -283,8 +254,7 @@
 }
 .ui.vertical.animated.button:focus .visible.content,
 .ui.vertical.animated.button:hover .visible.content {
-  -webkit-transform: translateY(200%);
-          transform: translateY(200%);
+  transform: translateY(200%);
   right: auto;
 }
 .ui.vertical.animated.button:focus .hidden.content,
@@ -296,40 +266,33 @@
 /* Fade */
 .ui.fade.animated.button .visible.content,
 .ui.fade.animated.button .hidden.content {
-  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .ui.fade.animated.button .visible.content {
   left: auto;
   right: auto;
   opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 .ui.fade.animated.button .hidden.content {
   opacity: 0;
   left: 0%;
   right: auto;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
 }
 .ui.fade.animated.button:focus .visible.content,
 .ui.fade.animated.button:hover .visible.content {
   left: auto;
   right: auto;
   opacity: 0;
-  -webkit-transform: scale(0.75);
-          transform: scale(0.75);
+  transform: scale(0.75);
 }
 .ui.fade.animated.button:focus .hidden.content,
 .ui.fade.animated.button:hover .hidden.content {
   left: 0%;
   right: auto;
   opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 /*-------------------
@@ -386,13 +349,8 @@
 --------------------*/
 
 .ui.labeled.button:not(.icon) {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   background: none !important;
   padding: 0px !important;
   border: none !important;
@@ -402,14 +360,10 @@
   margin: 0px;
 }
 .ui.labeled.button > .label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0px 0px 0px -1px !important;
-  padding: '';
+  padding: 0;
   font-size: 1em;
   border-color: rgba(34, 36, 38, 0.15);
 }
@@ -600,10 +554,9 @@
   height: 0.85714286em;
   opacity: 0.8;
   margin: 0em 0.42857143em 0em -0.21428571em;
-  -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
-  vertical-align: '';
-  color: '';
+  vertical-align: baseline;
+  color: initial;
 }
 .ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
   margin: 0em 0.42857143em 0em -0.21428571em;
@@ -755,9 +708,9 @@
 .ui.basic.buttons .active.button,
 .ui.basic.active.button {
   background: rgba(0, 0, 0, 0.05) !important;
-  box-shadow: '' !important;
+  box-shadow: none !important;
   color: rgba(0, 0, 0, 0.95);
-  box-shadow: rgba(34, 36, 38, 0.35);
+  box-shadow: 0 0 0 0 rgba(34, 36, 38, 0.35);
 }
 .ui.basic.buttons .active.button:hover,
 .ui.basic.active.button:hover {
@@ -766,13 +719,13 @@
 
 /* Vertical */
 .ui.basic.buttons .button:hover {
-  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset inset;
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px rgba(34, 36, 38, 0.15) inset;
 }
 .ui.basic.buttons .button:active {
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(34, 36, 38, 0.15) inset inset;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(34, 36, 38, 0.15) inset;
 }
 .ui.basic.buttons .active.button {
-  box-shadow: rgba(34, 36, 38, 0.35) inset;
+  box-shadow: 0 0 0 0 rgba(34, 36, 38, 0.35);
 }
 
 /* Standard Basic Inverted */
@@ -851,7 +804,7 @@
   margin: 0em;
   width: 2.57142857em;
   background-color: rgba(0, 0, 0, 0.05);
-  color: '';
+  color: initial;
   box-shadow: -1px 0px 0px 0px transparent inset;
 }
 
@@ -884,8 +837,7 @@
   width: 100%;
   top: 50%;
   text-align: center;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .ui.labeled.icon.buttons .button > .icon {
   border-radius: 0em;
@@ -1027,8 +979,6 @@
 /* Plural */
 .ui.attached.buttons {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 0em;
   width: auto !important;
@@ -1070,8 +1020,6 @@
 
 /* Left / Right */
 .ui[class*="left attached"].buttons {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   margin-right: 0em;
   margin-left: -1px;
@@ -1086,8 +1034,6 @@
   border-radius: 0em 0em 0.28571429rem 0em;
 }
 .ui[class*="right attached"].buttons {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   margin-left: 0em;
   margin-right: -1px;
@@ -1183,8 +1129,6 @@
 /* Fluid Vertical Buttons */
 .ui.fluid.vertical.buttons,
 .ui.fluid.vertical.buttons > .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: auto;
 }
@@ -3358,13 +3302,8 @@
 *******************************/
 
 .ui.buttons {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   font-size: 0em;
   vertical-align: baseline;
   margin: 0em 0.25em 0em 0em;
@@ -3384,9 +3323,7 @@
 
 /* Standard Group */
 .ui.buttons .button {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
   margin: 0em;
   border-radius: 0em;
   margin: 0px 0px 0px 0px;
@@ -3408,13 +3345,8 @@
 
 /* Vertical  Style */
 .ui.vertical.buttons {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 .ui.vertical.buttons .button {
   display: block;

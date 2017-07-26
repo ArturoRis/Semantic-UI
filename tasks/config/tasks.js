@@ -80,7 +80,9 @@ module.exports = {
       repository : release.repository,
       url        : release.url
     },
-
+    less:{
+      compatibility:'ie8'
+    },
     plumber: {
       less: {
         errorHandler: function(error) {
@@ -118,11 +120,13 @@ module.exports = {
     /* What Browsers to Prefix */
     prefix: {
       browsers: [
-        'last 2 versions',
-        '> 1%',
-        'opera 12.1',
-        'bb 10',
-        'android 4'
+        'Explorer 11'
+        // 'IE 11',
+        // 'last 1 versions',
+        // '> 1%',
+        // 'opera 12.1',
+        // 'bb 10',
+        // 'android 4'
       ]
     },
 

@@ -88,7 +88,7 @@
 
 .ui.disabled.input input,
 .ui.input input[disabled] {
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
 }
 
 /*--------------------
@@ -270,7 +270,7 @@
   transition: @iconTransition;
 }
 .ui.icon.input > .icon:not(.link) {
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
 }
 .ui.icon.input input {
   padding-right: @iconMargin !important;

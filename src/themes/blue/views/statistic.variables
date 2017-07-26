@@ -8,7 +8,7 @@
 
 @margin: 1em 0em;
 @textAlign: center;
-@maxWidth: auto;
+@maxWidth: none;
 
 /* Group */
 @horizontalSpacing: 1.5em;

@@ -200,7 +200,7 @@
             "-webkit-user-select",
             "-moz-user-select",
             "-ms-user-select",
-            "user-select",
+            // "user-select",
             "nav-index",
             "nav-up",
             "nav-right",

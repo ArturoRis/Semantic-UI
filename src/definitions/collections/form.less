@@ -115,7 +115,7 @@
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
-  tap-highlight-color:  rgba(255, 255, 255, 0);
+  // tap-highlight-color:  rgba(255, 255, 255, 0);
 
   line-height: @inputLineHeight;
   padding: @inputPadding;
@@ -133,7 +133,7 @@
 .ui.form textarea {
   margin: 0em;
   -webkit-appearance: none;
-  tap-highlight-color:  rgba(255, 255, 255, 0);
+  // tap-highlight-color:  rgba(255, 255, 255, 0);
 
   padding: @textAreaPadding;
   font-size: @textAreaFontSize;
@@ -593,7 +593,7 @@
 .ui.form .disabled.fields .field,
 .ui.form .disabled.field,
 .ui.form .field :disabled {
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
   opacity: @disabledOpacity;
 }
 .ui.form .field.disabled > label,
@@ -612,7 +612,7 @@
 .ui.loading.form {
   position: relative;
   cursor: default;
-  pointer-events: none;
+ pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
 }
 .ui.loading.form:before {
   position: absolute;

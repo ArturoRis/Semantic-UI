@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.7-6 - Search
+ * # Semantic UI 2.2.7-12 - Search
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -31,7 +31,6 @@
   border: 1px solid rgba(34, 36, 38, 0.15);
   color: rgba(0, 0, 0, 0.87);
   box-shadow: 0em 0em 0em 0em transparent inset;
-  -webkit-transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .ui.search .prompt {
@@ -55,8 +54,7 @@
   position: absolute;
   top: 100%;
   left: 0%;
-  -webkit-transform-origin: center top;
-          transform-origin: center top;
+  transform-origin: center top;
   white-space: normal;
   background: #FFFFFF;
   margin-top: 0.5em;
@@ -199,10 +197,8 @@
   margin: -0.64285714em 0em 0em -0.64285714em;
   width: 1.28571429em;
   height: 1.28571429em;
-  -webkit-animation: button-spin 0.6s linear;
-          animation: button-spin 0.6s linear;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation: button-spin 0.6s linear;
+  animation-iteration-count: infinite;
   border-radius: 500rem;
   border-color: #677389 transparent transparent;
   border-style: solid;
@@ -266,10 +262,9 @@
   position: absolute;
   left: auto;
   opacity: 0;
-  color: '';
+  color: initial;
   top: 0em;
   right: 0em;
-  -webkit-transition: color 0.2s ease, opacity 0.2s ease;
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 .ui.search.selection > .icon.input > .active.remove.icon {
@@ -298,7 +293,6 @@
   background: #F3F4F5;
   box-shadow: none;
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
-  -webkit-transition: background 0.2s ease, border-color 0.2s ease;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
@@ -321,7 +315,6 @@
   margin-left: 100px;
   border-left: 1px solid rgba(34, 36, 38, 0.15);
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
-  -webkit-transition: background 0.2s ease, border-color 0.2s ease;
   transition: background 0.2s ease, border-color 0.2s ease;
   padding: 0.85714286em 1.14285714em;
 }
@@ -335,7 +328,6 @@
   background: transparent;
   font-family: 'Montserrat', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 1em;
-  float: 1em;
   float: left;
   padding: 0.4em 1em;
   font-weight: bold;

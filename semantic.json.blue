@@ -1,0 +1,24 @@
+{
+  "base": "",
+
+  "paths": {
+    "source": {
+      "config"      : "src/theme.config.blue",
+      "definitions" : "src/definitions/",
+      "site"        : "src/site/",
+      "themes"      : "src/themes/"
+    },
+    "output": {
+      "packaged"     : "dist/blue",
+      "uncompressed" : "dist/blue/components/",
+      "compressed"   : "dist/blue/components/",
+      "themes"       : "dist/blue/themes/"
+    },
+    "clean"        : "dist/blue/"
+  },
+
+  "permission" : false,
+  "autoInstall": false,
+  "rtl": false
+
+}

@@ -91,10 +91,10 @@
 @attachedWidth: ~"calc(100% + "-@attachedHorizontalOffset * 2~")";
 @attachedBoxShadow: none;
 @attachedBorder: @borderWidth solid @solidBorderColor;
-@attachedBottomBoxShadow:@boxShadow;
-  /*,
+@attachedBottomBoxShadow:
+  @boxShadow,
   @attachedBoxShadow
-;*/
+;
 
 /* Inverted */
 @invertedBackground: @black;

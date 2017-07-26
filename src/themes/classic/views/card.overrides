@@ -19,7 +19,7 @@
   0px 3px 0px 0px @borderColor
 ;
 @border: none;
-@zIndex: auto;
+@zIndex: '';
 
 /* Item Group */
 @horizontalSpacing: 0.5em;
@@ -62,7 +62,7 @@
 /* Image */
 @imageSpacing: 0.25em;
 @contentImageWidth: 2em;
-@contentImageVerticalAlign: centers;
+@contentImageVerticalAlign: middle;
 
 /* Paragraph */
 @paragraphDistance: 0.1em;

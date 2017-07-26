@@ -7,7 +7,7 @@
   animation: loader-pulsar 2s infinite linear;
 }
 
-@keyframes loader-pulsar {
+@-webkit-keyframes loader-pulsar {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);

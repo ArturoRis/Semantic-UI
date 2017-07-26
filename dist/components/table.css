@@ -241,8 +241,8 @@
 .ui.definition.table tfoot:not(.full-width) th:first-child {
   pointer-events: none;
   background: transparent;
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.4);
+  font-weight: rgba(0, 0, 0, 0.4);
+  color: normal;
   box-shadow: 1px 1px 0px 1px #FFFFFF;
 }
 
@@ -937,7 +937,7 @@
 .ui.inverted.table th {
   background-color: rgba(0, 0, 0, 0.15);
   border-color: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .ui.inverted.table tr td {
   border-color: rgba(255, 255, 255, 0.1) !important;

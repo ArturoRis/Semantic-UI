@@ -53,8 +53,7 @@
   flex: 0 0 auto;
   width: 2.5em;
   height: auto;
-  -ms-grid-row-align: stretch;
-      align-self: stretch;
+  align-self: stretch;
   text-align: left;
 }
 .ui.feed > .event > .label .icon {
@@ -85,8 +84,7 @@
 .ui.feed > .event > .content {
   display: block;
   flex: 1 1 auto;
-  -ms-grid-row-align: stretch;
-      align-self: stretch;
+  align-self: stretch;
   text-align: left;
   word-wrap: break-word;
 }

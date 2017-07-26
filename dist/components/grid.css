@@ -1178,8 +1178,7 @@
 .ui.grid > .row > [class*="middle aligned"].column {
   flex-direction: column;
   vertical-align: middle;
-  -ms-grid-row-align: center !important;
-      align-self: center !important;
+  align-self: center !important;
 }
 
 /* Bottom Aligned */
@@ -1223,8 +1222,7 @@
 .ui.grid > [class*="left aligned"].column.column,
 .ui.grid > .row > [class*="left aligned"].column.column {
   text-align: left;
-  -ms-grid-row-align: inherit;
-      align-self: inherit;
+  align-self: inherit;
 }
 
 /* Center Aligned */
@@ -1234,8 +1232,7 @@
 .ui.grid > [class*="center aligned"].column.column,
 .ui.grid > .row > [class*="center aligned"].column.column {
   text-align: center;
-  -ms-grid-row-align: inherit;
-      align-self: inherit;
+  align-self: inherit;
 }
 .ui[class*="center aligned"].grid {
   justify-content: center;
@@ -1248,8 +1245,7 @@
 .ui.grid > [class*="right aligned"].column.column,
 .ui.grid > .row > [class*="right aligned"].column.column {
   text-align: right;
-  -ms-grid-row-align: inherit;
-      align-self: inherit;
+  align-self: inherit;
 }
 
 /* Justified */

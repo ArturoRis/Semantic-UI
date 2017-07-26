@@ -26,7 +26,7 @@
   @borderShadow
 ;
 @border: none;
-@zIndex: auto;
+@zIndex: '';
 @transition:
   box-shadow @defaultDuration @defaultEasing,
   transform @defaultDuration @defaultEasing
@@ -108,8 +108,8 @@
 @descriptionColor: rgba(0, 0, 0, 0.68);
 
 /* Content Image */
-@contentImageWidth: auto;
-@contentImageVerticalAlign: centers;
+@contentImageWidth: '';
+@contentImageVerticalAlign: middle;
 
 /* Avatar Image */
 @avatarSize: 2em;

@@ -43,7 +43,7 @@
 /* Icon */
 @iconDistance: 1rem;
 @iconSize: 2.5em;
-@iconAlign: center;
+@iconAlign: middle;
 
 /* Title */
 @titleFontFamily: @headerFont;

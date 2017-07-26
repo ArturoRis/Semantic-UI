@@ -460,7 +460,7 @@
 }
 
 /* Corner Icon */
-.icons .corner.icon {
+.ifix.icons .corner.icon {
   top: auto;
   left: auto;
   right: 0;
@@ -469,8 +469,32 @@
   font-size: @cornerIconSize;
   text-shadow: @cornerIconShadow;
 }
+.ifix.icons .top.right.corner.icon {
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+}
+.ifix.icons .top.left.corner.icon {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+}
+.ifix.icons .bottom.left.corner.icon {
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 0;
+}
+.ifix.icons .bottom.right.corner.icon {
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 0;
+}
 
-.icons .inverted.corner.icon {
+.ifix.icons .inverted.corner.icon {
   text-shadow: @cornerIconInvertedShadow;
 }
 

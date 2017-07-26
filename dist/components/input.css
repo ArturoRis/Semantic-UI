@@ -70,11 +70,11 @@
 ---------------------*/
 
 .ui.disabled.input,
-.ui.input input[disabled] {
+.ui.input:not(.disabled) input[disabled] {
   opacity: 0.2;
 }
 .ui.disabled.input input,
-.ui.input input[disabled] {
+.ui.input:not(.disabled) input[disabled] {
   pointer-events: none;
 }
 
@@ -94,7 +94,7 @@
        Loading
 ---------------------*/
 
-.ui.loading.loading.input > .icon:before {
+.ui.loading.loading.input > .ifix.icon:before {
   position: absolute;
   content: '';
   top: 50%;
@@ -105,7 +105,7 @@
   border-radius: 500rem;
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
-.ui.loading.loading.input > .icon:after {
+.ui.loading.loading.input > .ifix.icon:after {
   position: absolute;
   content: '';
   top: 50%;
@@ -194,10 +194,11 @@
   background-color: transparent !important;
   padding: 0em !important;
   box-shadow: none !important;
+  border-radius: 0px !important;
 }
 
 /* Transparent Icon */
-.ui.transparent.icon.input > .icon {
+.ui.transparent.icon.input > .ifix.icon {
   width: 1.1em;
 }
 .ui.transparent.icon.input > input {
@@ -230,7 +231,7 @@
          Icon
 ---------------------*/
 
-.ui.icon.input > .icon {
+.ui.icon.input > .ifix.icon {
   cursor: default;
   position: absolute;
   line-height: 1;
@@ -244,14 +245,14 @@
   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
   transition: opacity 0.3s ease;
 }
-.ui.icon.input > .icon:not(.link) {
+.ui.icon.input > .ifix.icon:not(.link) {
   pointer-events: none;
 }
 .ui.icon.input input {
   padding-right: 2.67142857em !important;
 }
-.ui.icon.input > .icon:before,
-.ui.icon.input > .icon:after {
+.ui.icon.input > .ifix.icon:before,
+.ui.icon.input > .ifix.icon:after {
   left: 0;
   position: absolute;
   text-align: center;
@@ -268,7 +269,7 @@
 }
 
 /* Left Icon Input */
-.ui[class*="left icon"].input > .icon {
+.ui[class*="left icon"].input > .ifix.icon {
   right: auto;
   left: 1px;
   border-radius: 0.28571429rem 0em 0em 0.28571429rem;
@@ -283,7 +284,7 @@
 }
 
 /* Focus */
-.ui.icon.input > input:focus ~ .icon {
+.ui.icon.input > input:focus ~ .ifix.icon {
   opacity: 1;
 }
 

@@ -18,7 +18,7 @@
 @width: 100%;
 @boxShadow: none;
 @border: none;
-@zIndex: auto;
+@zIndex: '';
 @transition: box-shadow @defaultDuration @defaultEasing;
 
 /* Responsive */
@@ -35,6 +35,7 @@
 @mobileImageMaxHeight: 250px;
 @mobileContentImageDistance: 1.5em;
 
+
 /*-------------------
        Content
 --------------------*/
@@ -43,7 +44,7 @@
 @imageDisplay: block;
 @imageFloat: none;
 @imageMaxHeight: '';
-@imageVerticalAlign: flex-start;
+@imageVerticalAlign: top;
 @imageMargin: 0em;
 @imagePadding: 0em;
 @imageBorder: none;
@@ -53,7 +54,7 @@
 
 /* Content */
 @contentDisplay: block;
-@contentVerticalAlign: flex-start;
+@contentVerticalAlign: top;
 
 @contentWidth: auto;
 @contentOffset: 0em;
@@ -101,14 +102,14 @@
 
 /* Description */
 @descriptionDistance: 0.6em;
-@descriptionMaxWidth: none;
+@descriptionMaxWidth: auto;
 @descriptionFontSize: 1em;
 @descriptionLineHeight: @lineHeight;
 @descriptionColor: @textColor;
 
 /* Content Image */
-@contentImageWidth: auto;
-@contentImageVerticalAlign: center;
+@contentImageWidth: '';
+@contentImageVerticalAlign: middle;
 
 /* Avatar Image */
 @avatarSize: @contentImageWidth;
@@ -150,5 +151,7 @@
 @dividedFirstLastMargin: 0em;
 @dividedFirstLastPadding: 0em;
 
-/* Sizes */
-@medium: 1em;
+
+/* Unstackable */
+@unstackableMobileImageWidth: 125px;
+

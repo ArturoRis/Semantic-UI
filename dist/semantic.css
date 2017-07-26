@@ -610,6 +610,10 @@ a:hover {
 }
 
 /*******************************
+         Scrollbars
+*******************************/
+
+/*******************************
           Highlighting
 *******************************/
 
@@ -637,6 +641,51 @@ textarea::-moz-selection,
 input::-moz-selection {
   background-color: rgba(100, 100, 100, 0.4);
   color: rgba(0, 0, 0, 0.87);
+}
+
+/* Force Simple Scrollbars */
+
+body ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+body ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  transition: color 0.2s ease;
+}
+
+body ::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+body ::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 135, 139, 0.8);
+}
+
+/* Inverted UI */
+
+body .ui.inverted::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body .ui.inverted::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+body .ui.inverted::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+body .ui.inverted::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 /*******************************
@@ -1377,7 +1426,7 @@ input::-moz-selection {
 .ui.icon.buttons .button > .icon,
 .ui.icon.button > .icon {
   opacity: 0.9;
-  margin: 0em;
+  margin: 0em !important;
   vertical-align: top;
 }
 
@@ -6269,7 +6318,7 @@ input::-moz-selection {
         Image
 --------------------*/
 
-.ui.header > .image,
+.ui.header > .image:not(.icon),
 .ui.header > img {
   display: inline-block;
   margin-top: 0.14285em;
@@ -6278,7 +6327,7 @@ input::-moz-selection {
   vertical-align: middle;
 }
 
-.ui.header > .image:only-child,
+.ui.header > .image:not(.icon):only-child,
 .ui.header > img:only-child {
   margin-right: 0.75rem;
 }
@@ -7507,7 +7556,7 @@ a.ui.inverted.grey.header:hover {
 
 /* Corner Icon */
 
-.icons .corner.icon {
+.ifix.icons .corner.icon {
   top: auto;
   left: auto;
   right: 0;
@@ -7517,7 +7566,35 @@ a.ui.inverted.grey.header:hover {
   text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF;
 }
 
-.icons .inverted.corner.icon {
+.ifix.icons .top.right.corner.icon {
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+}
+
+.ifix.icons .top.left.corner.icon {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+}
+
+.ifix.icons .bottom.left.corner.icon {
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 0;
+}
+
+.ifix.icons .bottom.right.corner.icon {
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 0;
+}
+
+.ifix.icons .inverted.corner.icon {
   text-shadow: -1px -1px 0 #1B1C1D, 1px -1px 0 #1B1C1D, -1px 1px 0 #1B1C1D, 1px 1px 0 #1B1C1D;
 }
 
@@ -11616,12 +11693,12 @@ img.ui.bordered.image {
 ---------------------*/
 
 .ui.disabled.input,
-.ui.input input[disabled] {
+.ui.input:not(.disabled) input[disabled] {
   opacity: 0.2;
 }
 
 .ui.disabled.input input,
-.ui.input input[disabled] {
+.ui.input:not(.disabled) input[disabled] {
   pointer-events: none;
 }
 
@@ -11641,7 +11718,7 @@ img.ui.bordered.image {
        Loading
 ---------------------*/
 
-.ui.loading.loading.input > .icon:before {
+.ui.loading.loading.input > .ifix.icon:before {
   position: absolute;
   content: '';
   top: 50%;
@@ -11653,7 +11730,7 @@ img.ui.bordered.image {
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
 
-.ui.loading.loading.input > .icon:after {
+.ui.loading.loading.input > .ifix.icon:after {
   position: absolute;
   content: '';
   top: 50%;
@@ -11749,11 +11826,12 @@ img.ui.bordered.image {
   background-color: transparent !important;
   padding: 0em !important;
   box-shadow: none !important;
+  border-radius: 0px !important;
 }
 
 /* Transparent Icon */
 
-.ui.transparent.icon.input > .icon {
+.ui.transparent.icon.input > .ifix.icon {
   width: 1.1em;
 }
 
@@ -11793,7 +11871,7 @@ img.ui.bordered.image {
          Icon
 ---------------------*/
 
-.ui.icon.input > .icon {
+.ui.icon.input > .ifix.icon {
   cursor: default;
   position: absolute;
   line-height: 1;
@@ -11808,7 +11886,7 @@ img.ui.bordered.image {
   transition: opacity 0.3s ease;
 }
 
-.ui.icon.input > .icon:not(.link) {
+.ui.icon.input > .ifix.icon:not(.link) {
   pointer-events: none;
 }
 
@@ -11816,8 +11894,8 @@ img.ui.bordered.image {
   padding-right: 2.67142857em !important;
 }
 
-.ui.icon.input > .icon:before,
-.ui.icon.input > .icon:after {
+.ui.icon.input > .ifix.icon:before,
+.ui.icon.input > .ifix.icon:after {
   left: 0;
   position: absolute;
   text-align: center;
@@ -11837,7 +11915,7 @@ img.ui.bordered.image {
 
 /* Left Icon Input */
 
-.ui[class*="left icon"].input > .icon {
+.ui[class*="left icon"].input > .ifix.icon {
   right: auto;
   left: 1px;
   border-radius: 0.28571429rem 0em 0em 0.28571429rem;
@@ -11855,7 +11933,7 @@ img.ui.bordered.image {
 
 /* Focus */
 
-.ui.icon.input > input:focus ~ .icon {
+.ui.icon.input > input:focus ~ .ifix.icon {
   opacity: 1;
 }
 
@@ -12588,12 +12666,8 @@ a.ui.active.label:hover {
   color: rgba(0, 0, 0, 0.95);
 }
 
-.ui.labels a.active.label:active:before,
-.ui.labels a.active.label:hover:before,
-.ui.labels a.active.label:active:before,
-.ui.labels a.active.label:hover:before,
-a.ui.active.label:active:before,
-a.ui.active.label:hover:before {
+.ui.labels a.active.label:ActiveHover:before,
+a.ui.active.label:ActiveHover:before {
   background-color: #C8C8C8;
   background-image: none;
   color: rgba(0, 0, 0, 0.95);
@@ -15574,6 +15648,14 @@ ol.ui.horizontal.list li:before,
   padding: 3em;
 }
 
+/* Padded vertical */
+
+.ui.padded.segment.vertical.segment,
+.ui[class*="very padded"].vertical.segment {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 /*-------------------
        Compact
 --------------------*/
@@ -15844,7 +15926,7 @@ ol.ui.horizontal.list li:before,
 /* Red */
 
 .ui.red.segment:not(.inverted) {
-  border-top: 2px solid #DB2828;
+  border-top: 2px solid #DB2828 !important;
 }
 
 .ui.inverted.red.segment {
@@ -15855,7 +15937,7 @@ ol.ui.horizontal.list li:before,
 /* Orange */
 
 .ui.orange.segment:not(.inverted) {
-  border-top: 2px solid #F2711C;
+  border-top: 2px solid #F2711C !important;
 }
 
 .ui.inverted.orange.segment {
@@ -15866,7 +15948,7 @@ ol.ui.horizontal.list li:before,
 /* Yellow */
 
 .ui.yellow.segment:not(.inverted) {
-  border-top: 2px solid #FBBD08;
+  border-top: 2px solid #FBBD08 !important;
 }
 
 .ui.inverted.yellow.segment {
@@ -15877,7 +15959,7 @@ ol.ui.horizontal.list li:before,
 /* Olive */
 
 .ui.olive.segment:not(.inverted) {
-  border-top: 2px solid #B5CC18;
+  border-top: 2px solid #B5CC18 !important;
 }
 
 .ui.inverted.olive.segment {
@@ -15888,7 +15970,7 @@ ol.ui.horizontal.list li:before,
 /* Green */
 
 .ui.green.segment:not(.inverted) {
-  border-top: 2px solid #21BA45;
+  border-top: 2px solid #21BA45 !important;
 }
 
 .ui.inverted.green.segment {
@@ -15899,7 +15981,7 @@ ol.ui.horizontal.list li:before,
 /* Teal */
 
 .ui.teal.segment:not(.inverted) {
-  border-top: 2px solid #00B5AD;
+  border-top: 2px solid #00B5AD !important;
 }
 
 .ui.inverted.teal.segment {
@@ -15910,7 +15992,7 @@ ol.ui.horizontal.list li:before,
 /* Blue */
 
 .ui.blue.segment:not(.inverted) {
-  border-top: 2px solid #677389;
+  border-top: 2px solid #677389 !important;
 }
 
 .ui.inverted.blue.segment {
@@ -15921,7 +16003,7 @@ ol.ui.horizontal.list li:before,
 /* Violet */
 
 .ui.violet.segment:not(.inverted) {
-  border-top: 2px solid #6435C9;
+  border-top: 2px solid #6435C9 !important;
 }
 
 .ui.inverted.violet.segment {
@@ -15932,7 +16014,7 @@ ol.ui.horizontal.list li:before,
 /* Purple */
 
 .ui.purple.segment:not(.inverted) {
-  border-top: 2px solid #A333C8;
+  border-top: 2px solid #A333C8 !important;
 }
 
 .ui.inverted.purple.segment {
@@ -15943,7 +16025,7 @@ ol.ui.horizontal.list li:before,
 /* Pink */
 
 .ui.pink.segment:not(.inverted) {
-  border-top: 2px solid #E03997;
+  border-top: 2px solid #E03997 !important;
 }
 
 .ui.inverted.pink.segment {
@@ -15954,7 +16036,7 @@ ol.ui.horizontal.list li:before,
 /* Brown */
 
 .ui.brown.segment:not(.inverted) {
-  border-top: 2px solid #A5673F;
+  border-top: 2px solid #A5673F !important;
 }
 
 .ui.inverted.brown.segment {
@@ -15965,7 +16047,7 @@ ol.ui.horizontal.list li:before,
 /* Grey */
 
 .ui.grey.segment:not(.inverted) {
-  border-top: 2px solid #767676;
+  border-top: 2px solid #767676 !important;
 }
 
 .ui.inverted.grey.segment {
@@ -15976,7 +16058,7 @@ ol.ui.horizontal.list li:before,
 /* Black */
 
 .ui.black.segment:not(.inverted) {
-  border-top: 2px solid #1B1C1D;
+  border-top: 2px solid #1B1C1D !important;
 }
 
 .ui.inverted.black.segment {
@@ -16321,7 +16403,6 @@ ol.ui.horizontal.list li:before,
 .ui.steps .step > .icon ~ .content {
   display: block;
   flex: 0 1 auto;
-  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -16359,7 +16440,6 @@ ol.ui.horizontal.list li:before,
   position: static;
   text-align: center;
   content: counters(ordered, ".");
-  -ms-grid-row-align: center;
   align-self: center;
   margin-right: 1rem;
   font-size: 2.5em;
@@ -16370,7 +16450,6 @@ ol.ui.horizontal.list li:before,
 
 .ui.ordered.steps .step > * {
   display: block;
-  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -16441,44 +16520,44 @@ ol.ui.horizontal.list li:before,
 /* Mobile (Default) */
 
 @media only screen and (max-width: 767px) {
-  .ui.steps {
+  .ui.steps:not(.unstackable) {
     display: inline-flex;
     overflow: visible;
     flex-direction: column;
   }
 
-  .ui.steps .step {
+  .ui.steps:not(.unstackable) .step {
     width: 100% !important;
     flex-direction: column;
     border-radius: 0em;
     padding: 1.14285714em 2em;
   }
 
-  .ui.steps .step:first-child {
+  .ui.steps:not(.unstackable) .step:first-child {
     padding: 1.14285714em 2em;
     border-radius: 0.28571429rem 0.28571429rem 0em 0em;
   }
 
-  .ui.steps .step:last-child {
+  .ui.steps:not(.unstackable) .step:last-child {
     border-radius: 0em 0em 0.28571429rem 0.28571429rem;
   }
 
   /* Arrow */
 
-  .ui.steps .step:after {
+  .ui.steps:not(.unstackable) .step:after {
     display: none !important;
   }
 
   /* Content */
 
-  .ui.steps .step .content {
+  .ui.steps:not(.unstackable) .step .content {
     text-align: center;
   }
 
   /* Icon */
 
-  .ui.steps .step > .icon,
-  .ui.ordered.steps .step:before {
+  .ui.steps:not(.unstackable) .step > .icon,
+  .ui.ordered.steps:not(.unstackable) .step:before {
     margin: 0em 0em 1rem 0em;
   }
 }
@@ -17787,26 +17866,26 @@ ol.ui.horizontal.list li:before,
     flex-wrap: wrap;
   }
 
-  .ui[class*="equal width"].form .fields > .field,
-  .ui.form [class*="equal width"].fields > .field,
-  .ui.form .two.fields > .fields,
-  .ui.form .two.fields > .field,
-  .ui.form .three.fields > .fields,
-  .ui.form .three.fields > .field,
-  .ui.form .four.fields > .fields,
-  .ui.form .four.fields > .field,
-  .ui.form .five.fields > .fields,
-  .ui.form .five.fields > .field,
-  .ui.form .six.fields > .fields,
-  .ui.form .six.fields > .field,
-  .ui.form .seven.fields > .fields,
-  .ui.form .seven.fields > .field,
-  .ui.form .eight.fields > .fields,
-  .ui.form .eight.fields > .field,
-  .ui.form .nine.fields > .fields,
-  .ui.form .nine.fields > .field,
-  .ui.form .ten.fields > .fields,
-  .ui.form .ten.fields > .field {
+  .ui[class*="equal width"].form:not(.unstackable) .fields > .field,
+  .ui.form:not(.unstackable) [class*="equal width"].fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .two.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .two.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .three.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .three.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .four.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .four.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .five.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .five.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .six.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .six.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .seven.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .seven.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .eight.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .eight.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .nine.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .nine.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .ten.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .ten.fields:not(.unstackable) > .field {
     width: 100% !important;
     margin: 0em 0em 1em;
   }
@@ -17887,29 +17966,29 @@ ol.ui.horizontal.list li:before,
 /* Swap to full width on mobile */
 
 @media only screen and (max-width: 767px) {
-  .ui.form .two.fields > .fields,
-  .ui.form .two.fields > .field,
-  .ui.form .three.fields > .fields,
-  .ui.form .three.fields > .field,
-  .ui.form .four.fields > .fields,
-  .ui.form .four.fields > .field,
-  .ui.form .five.fields > .fields,
-  .ui.form .five.fields > .field,
-  .ui.form .fields > .two.wide.field,
-  .ui.form .fields > .three.wide.field,
-  .ui.form .fields > .four.wide.field,
-  .ui.form .fields > .five.wide.field,
-  .ui.form .fields > .six.wide.field,
-  .ui.form .fields > .seven.wide.field,
-  .ui.form .fields > .eight.wide.field,
-  .ui.form .fields > .nine.wide.field,
-  .ui.form .fields > .ten.wide.field,
-  .ui.form .fields > .eleven.wide.field,
-  .ui.form .fields > .twelve.wide.field,
-  .ui.form .fields > .thirteen.wide.field,
-  .ui.form .fields > .fourteen.wide.field,
-  .ui.form .fields > .fifteen.wide.field,
-  .ui.form .fields > .sixteen.wide.field {
+  .ui.form:not(.unstackable) .two.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .two.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .three.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .three.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .four.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .four.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .five.fields:not(.unstackable) > .fields,
+  .ui.form:not(.unstackable) .five.fields:not(.unstackable) > .field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .two.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .three.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .four.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .five.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .six.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .seven.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .eight.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .nine.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .ten.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .eleven.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .twelve.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .thirteen.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .fourteen.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .fifteen.wide.field,
+  .ui.form:not(.unstackable) .fields:not(.unstackable) > .sixteen.wide.field {
     width: 100% !important;
   }
 
@@ -19394,7 +19473,6 @@ ol.ui.horizontal.list li:before,
 .ui.grid > .row > [class*="middle aligned"].column {
   flex-direction: column;
   vertical-align: middle;
-  -ms-grid-row-align: center !important;
   align-self: center !important;
 }
 
@@ -19442,7 +19520,6 @@ ol.ui.horizontal.list li:before,
 .ui.grid > [class*="left aligned"].column.column,
 .ui.grid > .row > [class*="left aligned"].column.column {
   text-align: left;
-  -ms-grid-row-align: inherit;
   align-self: inherit;
 }
 
@@ -19454,7 +19531,6 @@ ol.ui.horizontal.list li:before,
 .ui.grid > [class*="center aligned"].column.column,
 .ui.grid > .row > [class*="center aligned"].column.column {
   text-align: center;
-  -ms-grid-row-align: inherit;
   align-self: inherit;
 }
 
@@ -19470,7 +19546,6 @@ ol.ui.horizontal.list li:before,
 .ui.grid > [class*="right aligned"].column.column,
 .ui.grid > .row > [class*="right aligned"].column.column {
   text-align: right;
-  -ms-grid-row-align: inherit;
   align-self: inherit;
 }
 
@@ -21058,7 +21133,6 @@ Floated Menu / Item
 /* Item */
 
 .ui.secondary.menu .item {
-  -ms-grid-row-align: center;
   align-self: center;
   box-shadow: none;
   border: none;
@@ -21334,7 +21408,6 @@ Floated Menu / Item
 .ui.text.menu .item {
   border-radius: 0px;
   box-shadow: none;
-  -ms-grid-row-align: center;
   align-self: center;
   margin: 0em 0em;
   padding: 0.35714286em 0.5em;
@@ -21584,6 +21657,11 @@ Floated Menu / Item
   .ui.stackable.menu .right.menu,
   .ui.stackable.menu .right.item {
     margin-left: 0 !important;
+  }
+
+  .ui.stackable.menu .right.menu,
+  .ui.stackable.menu .left.menu {
+    flex-direction: column;
   }
 }
 
@@ -22061,6 +22139,10 @@ Floated Menu / Item
   margin-right: 0em !important;
   text-align: center;
   justify-content: center;
+}
+
+.ui.attached.item.menu {
+  margin: 0em -1px !important;
 }
 
 .ui.item.menu .item:last-child:before {
@@ -22606,6 +22688,10 @@ Floated Menu / Item
 
 .ui.compact.message {
   display: inline-block;
+}
+
+.ui.compact.icon.message {
+  display: inline-flex;
 }
 
 /*--------------
@@ -23221,8 +23307,8 @@ Floated Menu / Item
 .ui.definition.table tfoot:not(.full-width) th:first-child {
   pointer-events: none;
   background: transparent;
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.4);
+  font-weight: rgba(0, 0, 0, 0.4);
+  color: normal;
   box-shadow: 1px 1px 0px 1px #FFFFFF;
 }
 
@@ -24020,7 +24106,7 @@ Floated Menu / Item
 .ui.inverted.table th {
   background-color: rgba(0, 0, 0, 0.15);
   border-color: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .ui.inverted.table tr td {
@@ -25292,7 +25378,7 @@ a.ui.card:hover,
     margin-right: 0em;
   }
 
-  .ui.two.doubling.cards .card {
+  .ui.two.doubling.cards > .card {
     width: 100%;
     margin-left: 0em;
     margin-right: 0em;
@@ -25303,7 +25389,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.three.doubling.cards .card {
+  .ui.three.doubling.cards > .card {
     width: calc( 50%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25314,7 +25400,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.four.doubling.cards .card {
+  .ui.four.doubling.cards > .card {
     width: calc( 50%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25325,7 +25411,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.five.doubling.cards .card {
+  .ui.five.doubling.cards > .card {
     width: calc( 50%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25336,7 +25422,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.six.doubling.cards .card {
+  .ui.six.doubling.cards > .card {
     width: calc( 50%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25347,7 +25433,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.seven.doubling.cards .card {
+  .ui.seven.doubling.cards > .card {
     width: calc( 33.33333333%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25358,7 +25444,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.eight.doubling.cards .card {
+  .ui.eight.doubling.cards > .card {
     width: calc( 33.33333333%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25369,7 +25455,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.nine.doubling.cards .card {
+  .ui.nine.doubling.cards > .card {
     width: calc( 33.33333333%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25380,7 +25466,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.ten.doubling.cards .card {
+  .ui.ten.doubling.cards > .card {
     width: calc( 33.33333333%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25395,7 +25481,7 @@ a.ui.card:hover,
     margin-right: 0em;
   }
 
-  .ui.two.doubling.cards .card {
+  .ui.two.doubling.cards > .card {
     width: 100%;
     margin-left: 0em;
     margin-right: 0em;
@@ -25406,7 +25492,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.three.doubling.cards .card {
+  .ui.three.doubling.cards > .card {
     width: calc( 50%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25417,7 +25503,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.four.doubling.cards .card {
+  .ui.four.doubling.cards > .card {
     width: calc( 50%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25428,7 +25514,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.five.doubling.cards .card {
+  .ui.five.doubling.cards > .card {
     width: calc( 33.33333333%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25439,7 +25525,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.six.doubling.cards .card {
+  .ui.six.doubling.cards > .card {
     width: calc( 33.33333333%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25450,7 +25536,7 @@ a.ui.card:hover,
     margin-right: -1em;
   }
 
-  .ui.eight.doubling.cards .card {
+  .ui.eight.doubling.cards > .card {
     width: calc( 33.33333333%  -  2em );
     margin-left: 1em;
     margin-right: 1em;
@@ -25461,7 +25547,7 @@ a.ui.card:hover,
     margin-right: -0.75em;
   }
 
-  .ui.eight.doubling.cards .card {
+  .ui.eight.doubling.cards > .card {
     width: calc( 25%  -  1.5em );
     margin-left: 0.75em;
     margin-right: 0.75em;
@@ -25472,7 +25558,7 @@ a.ui.card:hover,
     margin-right: -0.75em;
   }
 
-  .ui.nine.doubling.cards .card {
+  .ui.nine.doubling.cards > .card {
     width: calc( 25%  -  1.5em );
     margin-left: 0.75em;
     margin-right: 0.75em;
@@ -25483,7 +25569,7 @@ a.ui.card:hover,
     margin-right: -0.75em;
   }
 
-  .ui.ten.doubling.cards .card {
+  .ui.ten.doubling.cards > .card {
     width: calc( 20%  -  1.5em );
     margin-left: 0.75em;
     margin-right: 0.75em;
@@ -25860,7 +25946,6 @@ a.ui.card:hover,
   flex: 0 0 auto;
   width: 2.5em;
   height: auto;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   text-align: left;
 }
@@ -25895,7 +25980,6 @@ a.ui.card:hover,
 .ui.feed > .event > .content {
   display: block;
   flex: 1 1 auto;
-  -ms-grid-row-align: stretch;
   align-self: stretch;
   text-align: left;
   word-wrap: break-word;
@@ -26264,7 +26348,6 @@ a.ui.card:hover,
 ---------------*/
 
 .ui.items > .item .content img {
-  -ms-grid-row-align: center;
   align-self: center;
   width: auto;
 }
@@ -26467,25 +26550,25 @@ a.ui.card:hover,
 /* Mobile Only */
 
 @media only screen and (max-width: 767px) {
-  .ui.items > .item {
+  .ui.items:not(.unstackable) > .item {
     flex-direction: column;
     margin: 2em 0em;
   }
 
-  .ui.items > .item > .image {
+  .ui.items:not(.unstackable) > .item > .image {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .ui.items > .item > .image,
-  .ui.items > .item > .image > img {
+  .ui.items:not(.unstackable) > .item > .image,
+  .ui.items:not(.unstackable) > .item > .image > img {
     max-width: 100% !important;
     width: auto !important;
     max-height: 250px !important;
   }
 
-  .ui.items > .item > .image + .content {
+  .ui.items:not(.unstackable) > .item > .image + .content {
     display: block;
     padding: 1.5em 0em 0em;
   }
@@ -26504,7 +26587,6 @@ a.ui.card:hover,
 }
 
 .ui.items > .item > .image + [class*="middle aligned"].content {
-  -ms-grid-row-align: center;
   align-self: center;
 }
 
@@ -26577,6 +26659,17 @@ a.ui.card:hover,
 
 .ui.items > .item {
   font-size: 1em;
+}
+
+/*---------------
+   Unstackable
+----------------*/
+
+@media only screen and (max-width: 767px) {
+  .ui.unstackable.items > .item > .image,
+  .ui.unstackable.items > .item > .image > img {
+    width: 125px !important;
+  }
 }
 
 /*******************************
@@ -28087,7 +28180,7 @@ a.ui.card:hover,
             Dimmer
 *******************************/
 
-.dimmable:not(.body) {
+.dimmable:not(body) {
   position: relative;
 }
 
@@ -28127,6 +28220,24 @@ a.ui.card:hover,
 
 .ui.segment > .ui.dimmer {
   border-radius: inherit !important;
+}
+
+/* Scrollbars */
+
+.ui.dimmer:not(.inverted)::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ui.dimmer:not(.inverted)::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.ui.dimmer:not(.inverted)::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ui.dimmer:not(.inverted)::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 /*******************************
@@ -28474,8 +28585,8 @@ body.dimmable > .dimmer {
 
 .ui.dropdown .menu .menu {
   top: 0% !important;
-  left: 100% !important;
-  right: auto !important;
+  left: 100%;
+  right: auto;
   margin: 0em 0em 0em -0.5em !important;
   border-radius: 0.28571429rem !important;
   z-index: 21 !important;
@@ -28533,8 +28644,10 @@ body.dimmable > .dimmer {
 .ui.dropdown .menu > .item > .image,
 .ui.dropdown .menu > .item > img {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   width: auto;
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
   max-height: 2em;
 }
 
@@ -29064,7 +29177,10 @@ select.ui.dropdown {
 
 .ui.loading.dropdown > .ifix.icon {
   height: 1em !important;
-  padding: 1.14285714em 1.07142857em !important;
+}
+
+.ui.loading.selection.dropdown > .ifix.icon {
+  padding: 1.5em 1.28571429em !important;
 }
 
 .ui.loading.dropdown > .ifix.icon:before {
@@ -29141,6 +29257,16 @@ select.ui.dropdown {
   display: block;
   visibility: hidden;
   z-index: -1;
+}
+
+.ui.dropdown > .loading.menu {
+  left: 0px !important;
+  right: auto !important;
+}
+
+.ui.dropdown > .menu .loading.menu {
+  left: 100% !important;
+  right: auto !important;
 }
 
 /*--------------------
@@ -29249,12 +29375,18 @@ select.ui.dropdown {
   border-radius: 0.28571429rem !important;
 }
 
-/* Left Flyout Menu */
+/* Leftward Opening Menu */
+
+.ui.dropdown > .left.menu {
+  left: auto !important;
+  right: 0px !important;
+}
 
 .ui.dropdown > .left.menu .menu,
 .ui.dropdown .menu .left.menu {
-  left: auto !important;
-  right: 100% !important;
+  left: auto;
+  right: 100%;
+  margin: 0em -0.5em 0em 0em !important;
   border-radius: 0.28571429rem !important;
 }
 
@@ -29275,6 +29407,7 @@ select.ui.dropdown {
 .ui.dropdown .item .left.dropdown.icon + .text,
 .ui.dropdown .left.menu .item .dropdown.icon + .text {
   margin-left: 1em;
+  margin-right: 0em;
 }
 
 /*--------------
@@ -29379,7 +29512,6 @@ select.ui.dropdown {
 .ui.scrolling.dropdown .menu .item.item.item,
 .ui.dropdown .scrolling.menu > .item.item.item {
   border-top: none;
-  padding-right: calc( 1.14285714rem  +  17px ) !important;
 }
 
 .ui.scrolling.dropdown .menu .item:first-child,
@@ -29575,7 +29707,7 @@ select.ui.dropdown {
   transform: rotate(45deg);
 }
 
-/* Top Right  Pointing */
+/* Top Right Pointing */
 
 .ui.top.right.pointing.dropdown > .menu {
   top: 100%;
@@ -29585,10 +29717,11 @@ select.ui.dropdown {
   margin: 1em 0em 0em;
 }
 
+.ui.top.pointing.dropdown > .left.menu:after,
 .ui.top.right.pointing.dropdown > .menu:after {
   top: -0.25em;
-  left: auto;
-  right: 1em;
+  left: auto !important;
+  right: 1em !important;
   margin: 0em;
   transform: rotate(45deg);
 }
@@ -29607,6 +29740,20 @@ select.ui.dropdown {
   left: -0.25em;
   margin: 0em 0em 0em 0em;
   transform: rotate(-45deg);
+}
+
+.ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu {
+  left: auto !important;
+  right: 100% !important;
+  margin: 0em 1em 0em 0em;
+}
+
+.ui.left:not(.top):not(.bottom).pointing.dropdown > .left.menu:after {
+  top: 1em;
+  left: auto;
+  right: -0.25em;
+  margin: 0em 0em 0em 0em;
+  transform: rotate(135deg);
 }
 
 /* Right Pointing */
@@ -29677,20 +29824,50 @@ select.ui.dropdown {
 
 /* Upward pointing */
 
-.ui.upward.pointing.dropdown > .menu,
-.ui.upward.top.pointing.dropdown > .menu {
-  top: auto;
-  bottom: 100%;
+.ui.pointing.upward.dropdown .menu,
+.ui.top.pointing.upward.dropdown .menu {
+  top: auto !important;
+  bottom: 100% !important;
   margin: 0em 0em 0.78571429rem;
   border-radius: 0.28571429rem;
 }
 
-.ui.upward.pointing.dropdown > .menu:after,
-.ui.upward.top.pointing.dropdown > .menu:after {
-  top: 100%;
-  bottom: auto;
+.ui.pointing.upward.dropdown .menu:after,
+.ui.top.pointing.upward.dropdown .menu:after {
+  top: 100% !important;
+  bottom: auto !important;
   box-shadow: 1px 1px 0px 1px rgba(34, 36, 38, 0.15);
   margin: -0.25em 0em 0em;
+}
+
+/* Right Pointing Upward */
+
+.ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu {
+  top: auto !important;
+  bottom: 0 !important;
+  margin: 0em 1em 0em 0em;
+}
+
+.ui.right.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {
+  top: auto !important;
+  bottom: 0 !important;
+  margin: 0em 0em 1em 0em;
+  box-shadow: -1px -1px 0px 1px rgba(34, 36, 38, 0.15);
+}
+
+/* Left Pointing Upward */
+
+.ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu {
+  top: auto !important;
+  bottom: 0 !important;
+  margin: 0em 0em 0em 1em;
+}
+
+.ui.left.pointing.upward.dropdown:not(.top):not(.bottom) .menu:after {
+  top: auto !important;
+  bottom: 0 !important;
+  margin: 0em 0em 1em 0em;
+  box-shadow: -1px -1px 0px 1px rgba(34, 36, 38, 0.15);
 }
 
 /*******************************
@@ -30030,12 +30207,10 @@ select.ui.dropdown {
 }
 
 .ui.modal > [class*="middle aligned"] {
-  -ms-grid-row-align: center;
   align-self: center;
 }
 
 .ui.modal > [class*="stretched"] {
-  -ms-grid-row-align: stretch;
   align-self: stretch;
 }
 
@@ -30312,6 +30487,13 @@ select.ui.dropdown {
   }
 }
 
+/* Scrolling Content */
+
+.ui.modal .scrolling.content {
+  max-height: calc(70vh);
+  overflow: auto;
+}
+
 /*--------------
    Full Screen
 ---------------*/
@@ -30342,6 +30524,92 @@ select.ui.dropdown {
 
 .ui.modal {
   font-size: 1rem;
+}
+
+/* Mini */
+
+.ui.mini.modal > .header:not(.ui) {
+  font-size: 1.3em;
+}
+
+/* Mini Modal Width */
+
+@media only screen and (max-width: 767px) {
+  .ui.mini.modal {
+    width: 95%;
+    margin: 0em 0em 0em -47.5%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ui.mini.modal {
+    width: 35.2%;
+    margin: 0em 0em 0em -17.6%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .ui.mini.modal {
+    width: 340px;
+    margin: 0em 0em 0em -170px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui.mini.modal {
+    width: 360px;
+    margin: 0em 0em 0em -180px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .ui.mini.modal {
+    width: 380px;
+    margin: 0em 0em 0em -190px;
+  }
+}
+
+/* mini */
+
+.ui.small.modal > .header:not(.ui) {
+  font-size: 1.3em;
+}
+
+/* Tiny Modal Width */
+
+@media only screen and (max-width: 767px) {
+  .ui.tiny.modal {
+    width: 95%;
+    margin: 0em 0em 0em -47.5%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ui.tiny.modal {
+    width: 52.8%;
+    margin: 0em 0em 0em -26.4%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .ui.tiny.modal {
+    width: 510px;
+    margin: 0em 0em 0em -255px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ui.tiny.modal {
+    width: 540px;
+    margin: 0em 0em 0em -270px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .ui.tiny.modal {
+    width: 570px;
+    margin: 0em 0em 0em -285px;
+  }
 }
 
 /* Small */
@@ -32963,21 +33231,6 @@ body.pushable > .pusher {
 /*--------------
        iOS
 ---------------*/
-
-/*
-  iOS incorrectly sizes document when content
-  is presented outside of view with 2Dtranslate
-*/
-
-html.ios {
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-
-html.ios,
-html.ios body {
-  height: initial !important;
-}
 
 /*******************************
           Variations

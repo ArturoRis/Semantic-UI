@@ -1,21 +1,24 @@
 {
   "base": "",
+
   "paths": {
     "source": {
-      "config": "src/theme.config",
-      "definitions": "src/definitions/",
-      "site": "src/site/",
-      "themes": "src/themes/"
+      "config"      : "src/theme.config",
+      "definitions" : "src/definitions/",
+      "site"        : "src/site/",
+      "themes"      : "src/themes/"
     },
     "output": {
-      "packaged": "dist/default/",
-      "uncompressed": "dist/default/components/",
-      "compressed": "dist/default/components/",
-      "themes": "dist/default/themes/"
+      "packaged"     : "dist/blue",
+      "uncompressed" : "dist/blue/components/",
+      "compressed"   : "dist/blue/components/",
+      "themes"       : "dist/blue/themes/"
     },
-    "clean": "dist/default/"
+    "clean"        : "dist/blue/"
   },
-  "permission": false,
+
+  "permission" : false,
   "autoInstall": false,
   "rtl": false
+
 }

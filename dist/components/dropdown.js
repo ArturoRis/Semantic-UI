@@ -329,6 +329,7 @@ $.fn.dropdown = function(parameters) {
               ;
             }
             if(title && module.has.search()) {
+              module.verbose('Adding title attr to search input');
               $search.prop("title", title);
             }
             if( module.is.multiple() && module.is.searchSelection() && !module.has.sizer()) {

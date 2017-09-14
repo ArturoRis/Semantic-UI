@@ -4401,6 +4401,7 @@ $.fn.dropdown = function(parameters) {
           : $.extend({}, $.fn.dropdown.settings),
 
         className       = settings.className,
+        title           = settings.title,
         message         = settings.message,
         fields          = settings.fields,
         keys            = settings.keys,
@@ -4674,26 +4675,18 @@ $.fn.dropdown = function(parameters) {
             }
             if( module.is.search() && !module.has.search() ) {
               module.verbose('Adding search input');
-              if(module.is.disabled()) {
-                  $search = $('<input />')
-                      .addClass(className.search)
-                      .prop({
-                          'autocomplete': 'off',
-                          'title': 'search',
-                          'disabled': true
-                      })
-                      .insertBefore($text)
-                  ;
-              } else {
-                  $search = $('<input />')
-                      .addClass(className.search)
-                      .prop({
-                          'autocomplete': 'off',
-                          'title': 'search'
-                      })
-                      .insertBefore($text)
-                  ;
-              }
+              $search = $('<input />')
+                  .addClass(className.search)
+                  .prop({
+                      'autocomplete': 'off',
+                      'title': title ? title : 'ricerca',
+                      'disabled': module.is.disabled()
+                  })
+                  .insertBefore($text)
+              ;
+            }
+            if(title && module.has.search()) {
+              $search.prop("title", title);
             }
             if( module.is.multiple() && module.is.searchSelection() && !module.has.sizer()) {
               module.create.sizer();
@@ -7988,6 +7981,8 @@ $.fn.dropdown.settings = {
 
   match                  : 'both',     // what to match against with search selection (both, text, or label)
   fullTextSearch         : false,      // search anywhere in value (set to 'exact' to require exact matches)
+
+  title                  : null,       // input title attribute
 
   placeholder            : 'auto',     // whether to convert blank <select> values to placeholder text
   preserveHTML           : true,       // preserve html when selecting value

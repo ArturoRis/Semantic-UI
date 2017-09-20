@@ -322,13 +322,12 @@ $.fn.dropdown = function(parameters) {
                   .addClass(className.search)
                   .prop({
                       'autocomplete': 'off',
-                      'title': title ? title : 'ricerca',
-                      'disabled': module.is.disabled()
+                      'title': title ? title : 'search'
                   })
                   .insertBefore($text)
               ;
             }
-            if(title && module.has.search()) {
+            if(module.is.search() && module.has.search() && title) {
               module.verbose('Adding title attr to search input');
               $search.prop("title", title);
             }

@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.11-3 - Dropdown
+ * # Semantic UI 2.2.11-4 - Dropdown
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -326,9 +326,6 @@ $.fn.dropdown = function(parameters) {
                   })
                   .insertBefore($text)
               ;
-            }
-            if(module.is.search() && module.has.search() && module.is.disabled()) {
-              $search.prop("disabled", true);
             }
             if(module.is.search() && module.has.search() && title) {
               module.verbose('Adding title attr to search input');

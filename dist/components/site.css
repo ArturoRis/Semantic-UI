@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.11-4 - Site
+ * # Semantic UI 2.4.0-1 - Site
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -146,6 +146,7 @@ input::-moz-selection {
 body ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
+  height: 10px;
 }
 body ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
@@ -155,6 +156,7 @@ body ::-webkit-scrollbar-thumb {
   cursor: pointer;
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.25);
+  -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 body ::-webkit-scrollbar-thumb:window-inactive {
@@ -181,5 +183,11 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 
 /*******************************
         Global Overrides
+*******************************/
+
+
+
+/*******************************
+         Site Overrides
 *******************************/
 

@@ -546,7 +546,8 @@ $.fn.modal = function(parameters) {
             if(settings.closable && settings.closable !== 'escapeKey') {
               $dimmer
                 .off('click' + elementEventNamespace)
-            ;
+              ;
+            }
           },
           dimmerStyles: function() {
             $dimmer.removeClass(className.inverted);

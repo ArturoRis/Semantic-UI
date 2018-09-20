@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.11-4 - Reset
+ * # Semantic UI 2.4.0-1 - Reset
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -18,10 +18,12 @@
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* iPad Input Shadows */
@@ -334,7 +336,8 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   
 /* 1 */
   padding: 0;
@@ -416,3 +419,9 @@ td,
 th {
   padding: 0;
 }
+
+
+/*******************************
+         Site Overrides
+*******************************/
+

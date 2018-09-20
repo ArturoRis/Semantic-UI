@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.2.11-4 - Flag
+ * # Semantic UI 2.4.0-1 - Flag
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -22,7 +22,8 @@
   margin: 0em 0.5em 0em 0em;
   text-decoration: inherit;
   speak: none;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 /* Sprite */
@@ -297,6 +298,10 @@
 .ifix.flag.eh:before,
 .ifix.flag.western.sahara:before {
   background-position: 0px -1664px;
+}
+.ifix.flag.gb.eng:before,
+.ifix.flag.england:before {
+  background-position: 0px -1690px;
 }
 .ifix.flag.er:before,
 .ifix.flag.eritrea:before {
@@ -1021,3 +1026,9 @@
 .ifix.flag.zimbabwe:before {
   background-position: -108px -390px;
 }
+
+
+/*******************************
+         Site Overrides
+*******************************/
+

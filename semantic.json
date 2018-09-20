@@ -17,5 +17,6 @@
   },
   "permission": false,
   "autoInstall": false,
-  "rtl": false
+  "rtl": false,
+  "version": "2.4.0-1"
 }

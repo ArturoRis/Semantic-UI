@@ -4,12 +4,20 @@
   "homepage"    : "http://www.semantic-ui.com",
   "authors": [
     {
-      "name" : "Jack Lukic",
-      "web"  : "http://www.jacklukic.com"
+      "name"  : "Jack Lukic",
+      "web"   : "http://www.jacklukic.com"
     },
     {
-      "name" : "Fabio Siliberto",
+      "name"  : "Umberto Tarantino",
+      "email" : "umberto[DOT]tarantino[AT]eng[DOT]it"
+    },
+    {
+      "name"   : "Fabio Siliberto",
       "email"  : "fabio.siliberto@gmail.com"
+    },
+    {
+      "name"   : "Tommaso Testi",
+      "email"  : "tommaso.testi@gmail.com"
     }
   ],
   "dependencies": {

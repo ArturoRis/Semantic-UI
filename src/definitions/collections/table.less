@@ -122,6 +122,11 @@
   border-top: none;
 }
 
+/* Repeated tbody */
+.ui.table tbody + tbody tr:first-child td {
+  border-top: @rowBorder;
+}
+
 /* Table Cells */
 .ui.table td {
   padding: @cellVerticalPadding @cellHorizontalPadding;
@@ -186,7 +191,7 @@
   }
   .ui.table:not(.unstackable) th:first-child,
   .ui.table:not(.unstackable) td:first-child {
-    font-weight: bold;
+    font-weight: @responsiveCellHeaderFontWeight;
   }
 
   /* Definition Table */
@@ -376,7 +381,7 @@
 .ui.table tr td.disabled,
 .ui.table tr.disabled:hover,
 .ui.table tr:hover td.disabled {
- pointer-events : none; // Serve per disabilitare il click anche se forse w3c validator da problemi
+  pointer-events: none;
   color: @disabledTextColor;
 }
 
@@ -882,13 +887,13 @@
 }
 .ui.sortable.table thead th.sorted,
 .ui.sortable.table thead th.sorted:hover {
-  // //user-select: none;
+  // user-select: none;
 }
 
 .ui.sortable.table thead th:after {
   display: none;
   font-style: normal;
-  font-weight: normal;
+  font-weight: @normal;
   text-decoration: inherit;
   content: '';
   height: 1em;

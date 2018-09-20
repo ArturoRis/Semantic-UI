@@ -80,9 +80,7 @@ module.exports = {
       repository : release.repository,
       url        : release.url
     },
-    less:{
-      compatibility:'ie8'
-    },
+
     plumber: {
       less: {
         errorHandler: function(error) {
@@ -120,13 +118,12 @@ module.exports = {
     /* What Browsers to Prefix */
     prefix: {
       browsers: [
-        'Explorer 11'
-        // 'IE 11',
-        // 'last 1 versions',
-        // '> 1%',
-        // 'opera 12.1',
-        // 'bb 10',
-        // 'android 4'
+        // 'Explorer 11',
+        'last 2 versions',
+        '> 1%',
+        'opera 12.1',
+        'bb 10',
+        'android 4'
       ]
     },
 
@@ -148,8 +145,10 @@ module.exports = {
 
     /* Minified JS Settings */
     uglify: {
-      mangle           : true,
-      // preserveComments : 'some'
+      mangle   : true,
+      // output: {
+      //  comments: 'some'
+      // }
     },
 
     /* Minified Concat CSS Settings */
@@ -162,8 +161,10 @@ module.exports = {
 
     /* Minified Concat JS */
     concatUglify: {
-      mangle           : true,
-      // preserveComments : false
+      mangle   : true,
+      // output: {
+      //   comments: 'some'
+      // }
     }
 
   }

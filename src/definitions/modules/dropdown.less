@@ -181,7 +181,7 @@
   margin: @menuDividerMargin;
 }
 
-.ui.dropdown .menu > .input {
+.ui.dropdown.dropdown .menu > .input {
   width: auto;
   display: flex;
   margin: @menuInputMargin;
@@ -769,7 +769,7 @@ select.ui.dropdown {
        Loading
 ---------------------*/
 
-.ui.loading.dropdown > .ifix.icon{
+.ui.loading.dropdown > .ifix.icon {
   height: @relative14px !important;
 }
 .ui.loading.selection.dropdown > .ifix.icon {
@@ -788,7 +788,7 @@ select.ui.dropdown {
   border-radius: @circularRadius;
   border: @loaderLineWidth solid @loaderFillColor;
 }
-.ui.loading.dropdown >.ifix.icon:after {
+.ui.loading.dropdown > .ifix.icon:after {
   position: absolute;
   content: '';
   top: 50%;
@@ -810,8 +810,8 @@ select.ui.dropdown {
 }
 
 /* Coupling */
-.ui.loading.dropdown.button >.ifix.icon:before,
-.ui.loading.dropdown.button >.ifix.icon:after {
+.ui.loading.dropdown.button > .ifix.icon:before,
+.ui.loading.dropdown.button > .ifix.icon:after {
   display: none;
 }
 
@@ -833,8 +833,8 @@ select.ui.dropdown {
 .ui.default.dropdown:not(.button) > .text {
   color: @defaultTextColor;
 }
-.ui.dropdown:not(.button) > input:focus + .default.text,
-.ui.default.dropdown:not(.button) > input:focus + .text {
+.ui.dropdown:not(.button) > input:focus ~ .default.text,
+.ui.default.dropdown:not(.button) > input:focus ~ .text {
   color: @defaultTextFocusColor;
 }
 /*--------------------
@@ -924,6 +924,18 @@ select.ui.dropdown {
   background-color: @errorItemActiveBackground;
 }
 
+
+/*--------------------
+        Clear
+----------------------*/
+
+.ui.dropdown > .clear.dropdown.icon {
+  opacity: @clearableIconOpacity;
+  transition: opacity @defaultDuration @defaultEasing;
+}
+.ui.dropdown > .clear.dropdown.icon:hover {
+  opacity: @clearableIconActiveOpacity;
+}
 
 
 /*--------------------

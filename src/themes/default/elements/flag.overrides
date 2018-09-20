@@ -261,6 +261,10 @@
 .ifix.flag.western.sahara:before {
   background-position: 0px -1664px;
 }
+.ifix.flag.gb.eng:before,
+.ifix.flag.england:before {
+  background-position: 0px -1690px;
+}
 .ifix.flag.er:before,
 .ifix.flag.eritrea:before {
   background-position: 0px -1716px;
@@ -306,6 +310,7 @@
   background-position: -36px 0px;
 }
 .ifix.flag.gb:before,
+.ifix.flag.uk:before,
 .ifix.flag.united.kingdom:before {
   background-position: -36px -26px;
 }

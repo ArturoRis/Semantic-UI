@@ -10,8 +10,18 @@
       "role"     : "Creator"
     },
     {
+      "name"     : "Umberto Tarantino",
+      "email"    : "umberto[DOT]tarantino[AT]eng[DOT]it",
+      "role"     : "Contributor"
+    },
+    {
       "name"     : "Fabio Siliberto",
       "email"    : "fabio.siliberto@gmail.com",
+      "role"     : "Contributor"
+    },
+    {
+      "name"	 : "Tommaso Testi",
+      "email"	 : "tommaso.testi@gmail.com"
       "role"     : "Contributor"
     }
   ],

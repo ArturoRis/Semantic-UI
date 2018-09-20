@@ -96,7 +96,7 @@
   opacity: 1 !important;
 }
 .ifix.disabled.icon {
-  opacity: 0.2 !important;
+  opacity: 0.45 !important;
 }
 
 
@@ -122,8 +122,8 @@
 .ifix.link.icons {
   cursor: pointer;
   opacity: 0.8;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 .ifix.link.icon:hover,
 .ifix.link.icons:hover {
@@ -298,14 +298,14 @@
 
 /* Blue */
 .ifix.blue.icon {
-  color: #677389 !important;
+  color: #2185D0 !important;
 }
 .ifix.inverted.blue.icon {
-  color: #C6D8FF !important;
+  color: #54C8FF !important;
 }
 .ifix.inverted.bordered.blue.icon,
 .ifix.inverted.circular.blue.icon {
-  background-color: #677389 !important;
+  background-color: #2185D0 !important;
   color: #FFFFFF !important;
 }
 
@@ -366,7 +366,7 @@
   color: #767676 !important;
 }
 .ifix.inverted.grey.icon {
-  color: #AFAFAF !important;
+  color: #DCDDDE !important;
 }
 .ifix.inverted.bordered.grey.icon,
 .ifix.inverted.circular.grey.icon {

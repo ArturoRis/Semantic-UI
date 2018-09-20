@@ -36,17 +36,17 @@
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   text-align: left;
-  line-height: 1.2142em;
-  font-family: 'Montserrat', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  padding: 0.67861429em 1em;
+  line-height: 1.21428571em;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding: 0.67857143em 1em;
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
   color: rgba(0, 0, 0, 0.87);
   border-radius: 0.28571429rem;
-  -webkit-transition: border-color 0.2s ease, -webkit-box-shadow 0.2s ease;
-  transition: border-color 0.2s ease, -webkit-box-shadow 0.2s ease;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
-  transition: box-shadow 0.2s ease, border-color 0.2s ease, -webkit-box-shadow 0.2s ease;
+  -webkit-transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
+  transition: box-shadow 0.1s ease, border-color 0.1s ease;
+  transition: box-shadow 0.1s ease, border-color 0.1s ease, -webkit-box-shadow 0.1s ease;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -79,7 +79,7 @@
 
 .ui.disabled.input,
 .ui.input:not(.disabled) input[disabled] {
-  opacity: 0.2;
+  opacity: 0.45;
 }
 .ui.disabled.input > input,
 .ui.input:not(.disabled) input[disabled] {
@@ -127,7 +127,7 @@
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   border-radius: 500rem;
-  border-color: #677389 transparent transparent;
+  border-color: #767676 transparent transparent;
   border-style: solid;
   border-width: 0.2em;
   -webkit-box-shadow: 0px 0px 0px 1px transparent;

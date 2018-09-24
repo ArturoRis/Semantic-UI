@@ -348,7 +348,6 @@
   background-position: -36px 0px;
 }
 .ifix.flag.gb:before,
-.ifix.flag.uk:before,
 .ifix.flag.united.kingdom:before {
   background-position: -36px -26px;
 }
@@ -1027,9 +1026,3 @@
 .ifix.flag.zimbabwe:before {
   background-position: -108px -390px;
 }
-
-
-/*******************************
-         Site Overrides
-*******************************/
-

@@ -22,7 +22,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArturoRis/Semantic-UI"
+    "url": "git://github.com/ArturoRis/Semantic-UI.git"
   },
   "bugs": {
     "url": "https://github.com/ArturoRis/Semantic-UI/issues"
@@ -93,6 +93,7 @@
     "gulp-watch": "^4.3.11",
     "jquery": "^3.2.1",
     "map-stream": "^0.1.0",
+    "merge-stream": "^1.0.0",
     "mkdirp": "^0.5.1",
     "require-dot-file": "^0.4.0",
     "run-sequence": "^2.1.0",

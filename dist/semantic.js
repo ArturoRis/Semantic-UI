@@ -1,5 +1,5 @@
  /*
- * # Semantic UI - 2.4.0-1
+ * # Semantic UI - 2.4.1-1
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -9,7 +9,7 @@
  *
  */
 /*!
- * # Semantic UI 2.4.0-1 - Site
+ * # Semantic UI 2.4.1-1 - Site
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -497,7 +497,7 @@ $.extend($.expr[ ":" ], {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Form Validation
+ * # Semantic UI 2.4.1-1 - Form Validation
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -2204,7 +2204,7 @@ $.fn.form.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Accordion
+ * # Semantic UI 2.4.1-1 - Accordion
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -2818,7 +2818,7 @@ $.extend( $.easing, {
 
 
 /*!
- * # Semantic UI 2.4.0-1 - Checkbox
+ * # Semantic UI 2.4.1-1 - Checkbox
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -3650,7 +3650,7 @@ $.fn.checkbox.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Dimmer
+ * # Semantic UI 2.4.1-1 - Dimmer
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -4384,7 +4384,7 @@ $.fn.dimmer.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Dropdown
+ * # Semantic UI 2.4.1-1 - Dropdown
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -4782,16 +4782,16 @@ $.fn.dropdown = function(parameters) {
           reference: function() {
             module.debug('Dropdown behavior was called on select, replacing with closest dropdown');
             // replace module reference
-            $module = $module.parent(selector.dropdown);
+            $module  = $module.parent(selector.dropdown);
             instance = $module.data(moduleNamespace);
-            element = $module.get(0);
+            element  = $module.get(0);
             module.refresh();
             module.setup.returnedObject();
           },
           returnedObject: function() {
             var
               $firstModules = $allModules.slice(0, elementIndex),
-              $lastModules = $allModules.slice(elementIndex + 1)
+              $lastModules  = $allModules.slice(elementIndex + 1)
             ;
             // adjust all modules to use correct reference
             $allModules = $firstModules.add($module).add($lastModules);
@@ -4998,7 +4998,6 @@ $.fn.dropdown = function(parameters) {
             else {
               if(settings.on == 'click') {
                 $module
-                  .on('click' + eventNamespace, selector.icon, module.event.icon.click)
                   .on('click' + eventNamespace, module.event.test.toggle)
                 ;
               }
@@ -5014,6 +5013,7 @@ $.fn.dropdown = function(parameters) {
                 ;
               }
               $module
+                .on('click' + eventNamespace, selector.icon, module.event.icon.click)
                 .on('mousedown' + eventNamespace, module.event.mousedown)
                 .on('mouseup'   + eventNamespace, module.event.mouseup)
                 .on('focus'     + eventNamespace, module.event.focus)
@@ -5415,7 +5415,7 @@ $.fn.dropdown = function(parameters) {
               if($icon.hasClass(className.clear)) {
                 module.clear();
               }
-              else {
+              else if (module.can.click()) {
                 module.toggle();
               }
             }
@@ -8350,7 +8350,7 @@ $.fn.dropdown.settings.templates = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Embed
+ * # Semantic UI 2.4.1-1 - Embed
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -8361,7 +8361,7 @@ $.fn.dropdown.settings.templates = {
 
 ;(function ($, window, document, undefined) {
 
-'use strict';
+"use strict";
 
 window = (typeof window != 'undefined' && window.Math == Math)
   ? window
@@ -8532,6 +8532,7 @@ $.fn.embed = function(parameters) {
         // clears embed
         reset: function() {
           module.debug('Clearing embed and showing placeholder');
+          module.remove.data();
           module.remove.active();
           module.remove.embed();
           module.showPlaceholder();
@@ -8651,6 +8652,15 @@ $.fn.embed = function(parameters) {
         },
 
         remove: {
+          data: function() {
+            $module
+              .removeData(metadata.id)
+              .removeData(metadata.icon)
+              .removeData(metadata.placeholder)
+              .removeData(metadata.source)
+              .removeData(metadata.url)
+            ;
+          },
           active: function() {
             $module.removeClass(className.active);
           },
@@ -9047,7 +9057,7 @@ $.fn.embed.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Modal
+ * # Semantic UI 2.4.1-1 - Modal
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -10086,7 +10096,7 @@ $.fn.modal.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Nag
+ * # Semantic UI 2.4.1-1 - Nag
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -10594,7 +10604,7 @@ $.extend( $.easing, {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Popup
+ * # Semantic UI 2.4.1-1 - Popup
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -12127,7 +12137,7 @@ $.fn.popup.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Progress
+ * # Semantic UI 2.4.1-1 - Progress
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -13059,7 +13069,7 @@ $.fn.progress.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Rating
+ * # Semantic UI 2.4.1-1 - Rating
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -13568,7 +13578,7 @@ $.fn.rating.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Search
+ * # Semantic UI 2.4.1-1 - Search
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -14189,7 +14199,6 @@ $.fn.search = function(parameters) {
               module.error(error.source);
               return [];
             }
-
             // iterate through search fields looking for matches
             $.each(searchFields, function(index, field) {
               $.each(source, function(label, content) {
@@ -15075,7 +15084,7 @@ $.fn.search.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Shape
+ * # Semantic UI 2.4.1-1 - Shape
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -15997,7 +16006,7 @@ $.fn.shape.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Sidebar
+ * # Semantic UI 2.4.1-1 - Sidebar
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -17031,7 +17040,7 @@ $.fn.sidebar.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Sticky
+ * # Semantic UI 2.4.1-1 - Sticky
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -17991,7 +18000,7 @@ $.fn.sticky.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Tab
+ * # Semantic UI 2.4.1-1 - Tab
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -18944,7 +18953,7 @@ $.fn.tab.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Transition
+ * # Semantic UI 2.4.1-1 - Transition
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -20040,7 +20049,7 @@ $.fn.transition.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - API
+ * # Semantic UI 2.4.1-1 - API
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -21208,7 +21217,7 @@ $.api.settings = {
 })( jQuery, window, document );
 
 /*!
- * # Semantic UI 2.4.0-1 - Visibility
+ * # Semantic UI 2.4.1-1 - Visibility
  * http://github.com/semantic-org/semantic-ui/
  *
  *

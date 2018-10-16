@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.4.0-1 - Dropdown
+ * # Semantic UI 2.4.1-1 - Dropdown
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -397,16 +397,16 @@ $.fn.dropdown = function(parameters) {
           reference: function() {
             module.debug('Dropdown behavior was called on select, replacing with closest dropdown');
             // replace module reference
-            $module = $module.parent(selector.dropdown);
+            $module  = $module.parent(selector.dropdown);
             instance = $module.data(moduleNamespace);
-            element = $module.get(0);
+            element  = $module.get(0);
             module.refresh();
             module.setup.returnedObject();
           },
           returnedObject: function() {
             var
               $firstModules = $allModules.slice(0, elementIndex),
-              $lastModules = $allModules.slice(elementIndex + 1)
+              $lastModules  = $allModules.slice(elementIndex + 1)
             ;
             // adjust all modules to use correct reference
             $allModules = $firstModules.add($module).add($lastModules);
@@ -613,7 +613,6 @@ $.fn.dropdown = function(parameters) {
             else {
               if(settings.on == 'click') {
                 $module
-                  .on('click' + eventNamespace, selector.icon, module.event.icon.click)
                   .on('click' + eventNamespace, module.event.test.toggle)
                 ;
               }
@@ -629,6 +628,7 @@ $.fn.dropdown = function(parameters) {
                 ;
               }
               $module
+                .on('click' + eventNamespace, selector.icon, module.event.icon.click)
                 .on('mousedown' + eventNamespace, module.event.mousedown)
                 .on('mouseup'   + eventNamespace, module.event.mouseup)
                 .on('focus'     + eventNamespace, module.event.focus)
@@ -1030,7 +1030,7 @@ $.fn.dropdown = function(parameters) {
               if($icon.hasClass(className.clear)) {
                 module.clear();
               }
-              else {
+              else if (module.can.click()) {
                 module.toggle();
               }
             }

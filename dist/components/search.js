@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.4.0-1 - Search
+ * # Semantic UI 2.4.1-1 - Search
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -620,7 +620,6 @@ $.fn.search = function(parameters) {
               module.error(error.source);
               return [];
             }
-
             // iterate through search fields looking for matches
             $.each(searchFields, function(index, field) {
               $.each(source, function(label, content) {

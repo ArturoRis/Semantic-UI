@@ -437,7 +437,7 @@ for instance `lemon icon` not `lemon outline icon` since there is only one lemon
 .ifix.icon.houzz:before { content: "\f27c"; }
 .ifix.icon.html5:before { content: "\f13b"; }
 .ifix.icon.hubspot:before { content: "\f3b2"; }
-.ifix.icon..ifix.cursor:before { content: "\f246"; }
+.ifix.icon.i.cursor:before { content: "\f246"; }
 .ifix.icon.id.badge:before { content: "\f2c1"; }
 .ifix.icon.id.card:before { content: "\f2c2"; }
 .ifix.icon.image:before { content: "\f03e"; }

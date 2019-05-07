@@ -26,6 +26,9 @@
 @lightPrimaryColor   : @lightBlack;
 @lightSecondaryColor : @lightGrey;
 
+/* Whenever a color needs to get calculated (screen()/multiply()) out of a base color */
+@blendingBaseColor: #cccccc;
+
 /*-------------------
         Sizes
 --------------------*/

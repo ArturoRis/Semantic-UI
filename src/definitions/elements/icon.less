@@ -38,7 +38,7 @@
   display: inline-block;
   opacity: @opacity;
 
-  margin: 0em @distanceFromText 0em 0em;
+  margin: 0 @distanceFromText 0 0;
 
   width: @width;
   height: @height;
@@ -50,7 +50,6 @@
   text-align: center;
 
   speak: none;
-  // font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   backface-visibility: hidden;
@@ -71,35 +70,23 @@
 .ifix.icon.loading {
   height: 1em;
   line-height: 1;
-  animation: icon-loading @loadingDuration linear infinite;
-}
-@keyframes icon-loading {
- from {
-    transform: rotate(0deg);
- }
- to {
-    transform: rotate(360deg);
- }
+  animation: loader @loadingDuration linear infinite;
 }
 
 /*******************************
              States
 *******************************/
 
-.ifix.icon.hover {
-  opacity: 1 !important;
+.ifix.icon:hover, .ifix.icons:hover,
+.ifix.icon:active, .ifix.icons:active,
+.ifix.emphasized.icon:not(.disabled), .ifix.emphasized.icons:not(.disabled) {
+  opacity: 1;
 }
 
-.ifix.icon.active {
-  opacity: 1 !important;
-}
-
-.ifix.emphasized.icon {
-  opacity: 1 !important;
-}
-
-.ifix.disabled.icon {
-  opacity: @disabledOpacity !important;
+.ifix.disabled.icon, .ifix.disabled.icons {
+  opacity: @disabledOpacity;
+  cursor: default;
+  pointer-events: none;
 }
 
 
@@ -114,20 +101,20 @@
 
 .ifix.fitted.icon {
   width: auto;
-  margin: 0em !important;
+  margin: 0 !important;
 }
 
 /*-------------------
          Link
 --------------------*/
 
-.ifix.link.icon, .ifix.link.icons {
+.ifix.link.icon:not(.disabled), .ifix.link.icons:not(.disabled) {
   cursor: pointer;
   opacity: @linkOpacity;
   transition: opacity @defaultDuration @defaultEasing;
 }
 .ifix.link.icon:hover, .ifix.link.icons:hover {
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 /*-------------------
@@ -176,6 +163,43 @@
   transform: rotate(-90deg);
 }
 
+.ifix.halfway.rotated.icon {
+  transform: rotate(180deg);
+}
+
+/*--------------------------
+      Flipped & Rotated
+---------------------------*/
+.ifix.rotated.flipped.icon,
+.ifix.right.rotated.flipped.icon,
+.ifix.clockwise.rotated.flipped.icon {
+  transform: scale(-1, 1) rotate(90deg);
+}
+
+.ifix.left.rotated.flipped.icon,
+.ifix.counterclockwise.rotated.flipped.icon {
+  transform: scale(-1, 1) rotate(-90deg);
+}
+
+.ifix.halfway.rotated.flipped.icon {
+  transform: scale(-1, 1) rotate(180deg);
+}
+
+.ifix.rotated.vertically.flipped.icon,
+.ifix.right.rotated.vertically.flipped.icon,
+.ifix.clockwise.rotated.vertically.flipped.icon {
+  transform: scale(1, -1) rotate(90deg);
+}
+
+.ifix.left.rotated.vertically.flipped.icon,
+.ifix.counterclockwise.rotated.vertically.flipped.icon {
+  transform: scale(1, -1) rotate(-90deg);
+}
+
+.ifix.halfway.rotated.vertically.flipped.icon {
+  transform: scale(1, -1) rotate(180deg);
+}
+
 /*-------------------
       Bordered
 --------------------*/
@@ -201,8 +225,8 @@
 /* Inverted Shapes */
 .ifix.inverted.bordered.icon,
 .ifix.inverted.circular.icon {
-  background-color: @black !important;
-  color: @white !important;
+  background-color: @black;
+  color: @white;
 }
 
 .ifix.inverted.icon {
@@ -214,191 +238,41 @@
        Colors
 --------------------*/
 
-/* Red */
-.ifix.red.icon {
-  color: @red !important;
-}
-.ifix.inverted.red.icon {
-  color: @lightRed !important;
-}
-.ifix.inverted.bordered.red.icon,
-.ifix.inverted.circular.red.icon {
-  background-color: @red !important;
-  color: @white !important;
-}
+each(@colors, {
+  @color: replace(@key, '@', '');
+  @c: @colors[@@color][color];
+  @l: @colors[@@color][light];
 
-/* Orange */
-.ifix.orange.icon {
-  color: @orange !important;
-}
-.ifix.inverted.orange.icon {
-  color: @lightOrange !important;
-}
-.ifix.inverted.bordered.orange.icon,
-.ifix.inverted.circular.orange.icon {
-  background-color: @orange !important;
-  color: @white !important;
-}
+  .ifix.@{color}.icon.icon.icon.icon {
+    color: @c;
+  }
+  i.inverted.@{color}.icon.icon.icon.icon {
+    color: @l;
+  }
+  i.inverted.bordered.@{color}.icon.icon.icon.icon,
+  i.inverted.circular.@{color}.icon.icon.icon.icon {
+    background-color: @c;
+    color: @white;
+  }
+})
 
-/* Yellow */
-.ifix.yellow.icon {
-  color: @yellow !important;
-}
-.ifix.inverted.yellow.icon {
-  color: @lightYellow !important;
-}
-.ifix.inverted.bordered.yellow.icon,
-.ifix.inverted.circular.yellow.icon {
-  background-color: @yellow !important;
-  color: @white !important;
-}
-
-/* Olive */
-.ifix.olive.icon {
-  color: @olive !important;
-}
-.ifix.inverted.olive.icon {
-  color: @lightOlive !important;
-}
-.ifix.inverted.bordered.olive.icon,
-.ifix.inverted.circular.olive.icon {
-  background-color: @olive !important;
-  color: @white !important;
-}
-
-/* Green */
-.ifix.green.icon {
-  color: @green !important;
-}
-.ifix.inverted.green.icon {
-  color: @lightGreen !important;
-}
-.ifix.inverted.bordered.green.icon,
-.ifix.inverted.circular.green.icon {
-  background-color: @green !important;
-  color: @white !important;
-}
-
-/* Teal */
-.ifix.teal.icon {
-  color: @teal !important;
-}
-.ifix.inverted.teal.icon {
-  color: @lightTeal !important;
-}
-.ifix.inverted.bordered.teal.icon,
-.ifix.inverted.circular.teal.icon {
-  background-color: @teal !important;
-  color: @white !important;
-}
-
-/* Blue */
-.ifix.blue.icon {
-  color: @blue !important;
-}
-.ifix.inverted.blue.icon {
-  color: @lightBlue !important;
-}
-.ifix.inverted.bordered.blue.icon,
-.ifix.inverted.circular.blue.icon {
-  background-color: @blue !important;
-  color: @white !important;
-}
-
-/* Violet */
-.ifix.violet.icon {
-  color: @violet !important;
-}
-.ifix.inverted.violet.icon {
-  color: @lightViolet !important;
-}
-.ifix.inverted.bordered.violet.icon,
-.ifix.inverted.circular.violet.icon {
-  background-color: @violet !important;
-  color: @white !important;
-}
-
-/* Purple */
-.ifix.purple.icon {
-  color: @purple !important;
-}
-.ifix.inverted.purple.icon {
-  color: @lightPurple !important;
-}
-.ifix.inverted.bordered.purple.icon,
-.ifix.inverted.circular.purple.icon {
-  background-color: @purple !important;
-  color: @white !important;
-}
-
-/* Pink */
-.ifix.pink.icon {
-  color: @pink !important;
-}
-.ifix.inverted.pink.icon {
-  color: @lightPink !important;
-}
-.ifix.inverted.bordered.pink.icon,
-.ifix.inverted.circular.pink.icon {
-  background-color: @pink !important;
-  color: @white !important;
-}
-
-/* Brown */
-.ifix.brown.icon {
-  color: @brown !important;
-}
-.ifix.inverted.brown.icon {
-  color: @lightBrown !important;
-}
-.ifix.inverted.bordered.brown.icon,
-.ifix.inverted.circular.brown.icon {
-  background-color: @brown !important;
-  color: @white !important;
-}
-
-/* Grey */
-.ifix.grey.icon {
-  color: @grey !important;
-}
-.ifix.inverted.grey.icon {
-  color: @lightGrey !important;
-}
-.ifix.inverted.bordered.grey.icon,
-.ifix.inverted.circular.grey.icon {
-  background-color: @grey !important;
-  color: @white !important;
-}
-
-/* Black */
-.ifix.black.icon {
-  color: @black !important;
-}
-.ifix.inverted.black.icon {
-  color: @lightBlack !important;
-}
-.ifix.inverted.bordered.black.icon,
-.ifix.inverted.circular.black.icon {
-  background-color: @black !important;
-  color: @white !important;
-}
 
 /*-------------------
         Sizes
 --------------------*/
 
-.ifix.mini.icon,
-.ifix.mini.icons {
+.ifix.mini.mini.mini.icon,
+.ifix.mini.mini.mini.icons {
   line-height: 1;
   font-size: @mini;
 }
-.ifix.tiny.icon,
-.ifix.tiny.icons {
+.ifix.tiny.tiny.tiny.icon,
+.ifix.tiny.tiny.tiny.icons {
   line-height: 1;
   font-size: @tiny;
 }
-.ifix.small.icon,
-.ifix.small.icons {
+.ifix.small.small.small.icon,
+.ifix.small.small.small.icons {
   line-height: 1;
   font-size: @small;
 }
@@ -406,26 +280,26 @@
 .ifix.icons {
   font-size: @medium;
 }
-.ifix.large.icon,
-.ifix.large.icons {
+.ifix.large.large.large.icon,
+.ifix.large.large.large.icons {
   line-height: 1;
   vertical-align: middle;
   font-size: @large;
 }
-.ifix.big.icon,
-.ifix.big.icons {
+.ifix.big.big.big.icon,
+.ifix.big.big.big.icons {
   line-height: 1;
   vertical-align: middle;
   font-size: @big;
 }
-.ifix.huge.icon,
-.ifix.huge.icons {
+.ifix.huge.huge.huge.icon,
+.ifix.huge.huge.huge.icons {
   line-height: 1;
   vertical-align: middle;
   font-size: @huge;
 }
-.ifix.massive.icon,
-.ifix.massive.icons {
+.ifix.massive.massive.massive.icon,
+.ifix.massive.massive.massive.icons {
   line-height: 1;
   vertical-align: middle;
   font-size: @massive;
@@ -446,7 +320,6 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  margin: 0em;
   margin: 0;
 }
 
@@ -456,7 +329,6 @@
   height: auto;
   vertical-align: top;
   transform: none;
-  margin-right: @distanceFromText;
 }
 
 /* Corner Icon */
@@ -469,25 +341,25 @@
   font-size: @cornerIconSize;
   text-shadow: @cornerIconShadow;
 }
-.ifix.icons .top.right.corner.icon {
+.ifix.icons .icon.corner[class*="top right"] {
   top: 0;
   left: auto;
   right: 0;
   bottom: auto;
 }
-.ifix.icons .top.left.corner.icon {
+.ifix.icons .icon.corner[class*="top left"] {
   top: 0;
   left: 0;
   right: auto;
   bottom: auto;
 }
-.ifix.icons .bottom.left.corner.icon {
+.ifix.icons .icon.corner[class*="bottom left"] {
   top: auto;
   left: 0;
   right: auto;
   bottom: 0;
 }
-.ifix.icons .bottom.right.corner.icon {
+.ifix.icons .icon.corner[class*="bottom right"] {
   top: auto;
   left: auto;
   right: 0;

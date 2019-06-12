@@ -274,9 +274,14 @@ $.fn.calendar = function(parameters) {
               //no header for time-only mode
               if (!isTimeOnly) {
                 var thead = $('<thead/>').appendTo(table);
+                var headerDateText = 'header-date-' + (Math.random().toString(36)).slice(2);
 
                 row = $('<tr/>').appendTo(thead);
-                cell = $('<th/>').attr('colspan', '' + columns).appendTo(row);
+                cell = $('<th/>').attr({
+                  id: headerDateText,
+                  scope: 'col',
+                  colspan: '' + columns
+                }).appendTo(row);
 
                 var headerDate = isYear || isMonth ? new Date(year, 0, 1) :
                   isDay ? new Date(year, month, 1) : new Date(year, month, day, hour, minute);
@@ -290,14 +295,14 @@ $.fn.calendar = function(parameters) {
                   var prev = $('<span/>').addClass(className.prev).appendTo(cell);
                   prev.data(metadata.focusDate, prevDate);
                   prev.toggleClass(className.disabledCell, !module.helper.isDateInRange(prevLast, mode));
-                  $('<i/>').addClass(className.prevIcon).appendTo(prev);
+                  $('<span class="ifix"/>').addClass(className.prevIcon).appendTo(prev);
                 }
 
                 if (p === pages - 1) {
                   var next = $('<span/>').addClass(className.next).appendTo(cell);
                   next.data(metadata.focusDate, nextDate);
                   next.toggleClass(className.disabledCell, !module.helper.isDateInRange(nextFirst, mode));
-                  $('<i/>').addClass(className.nextIcon).appendTo(next);
+                  $('<span class="ifix"/>').addClass(className.nextIcon).appendTo(next);
                 }
                 if (isDay) {
                   row = $('<tr/>').appendTo(thead);
@@ -308,8 +313,13 @@ $.fn.calendar = function(parameters) {
                       textColumns--;
                   }
                   for (i = 0; i < textColumns; i++) {
-                    cell = $('<th/>').appendTo(row);
-                    cell.text(formatter.dayColumnHeader((i + settings.firstDayOfWeek) % 7, settings));
+                    var cellDay = formatter.dayColumnHeader((i + settings.firstDayOfWeek) % 7, settings);
+                    cell = $('<th/>').attr({
+                      id: cellDay + '-' + i,
+                      headers: headerDateText,
+                      scope: 'col'
+                    }).appendTo(row);
+                    cell.text(cellDay);
                   }
                 }
               }
@@ -330,7 +340,8 @@ $.fn.calendar = function(parameters) {
                   var cellText = isYear ? i :
                     isMonth ? settings.text.monthsShort[i] : isDay ? cellDate.getDate() :
                       formatter.time(cellDate, settings, true);
-                  cell = $('<td/>').addClass(className.cell).appendTo(row);
+                  cell = $('<td/>').attr('headers', formatter.dayColumnHeader((c + settings.firstDayOfWeek) % 7, settings) + '-' + c)
+                    .addClass(className.cell).appendTo(row);
                   cell.text(cellText);
                   cell.data(metadata.date, cellDate);
                   var adjacent = isDay && cellDate.getMonth() !== ((month + 12) % 12);
@@ -343,23 +354,12 @@ $.fn.calendar = function(parameters) {
                     }
                   }
                   var active = module.helper.dateEqual(cellDate, date, mode);
-                  var isToday = module.helper.dateEqual(cellDate, today, mode);
                   cell.toggleClass(className.adjacentCell, adjacent);
                   cell.toggleClass(className.disabledCell, disabled);
                   cell.toggleClass(className.activeCell, active && !adjacent);
                   if (!isHour && !isMinute) {
-                    cell.toggleClass(className.todayCell, !adjacent && isToday);
+                    cell.toggleClass(className.todayCell, !adjacent && module.helper.dateEqual(cellDate, today, mode));
                   }
-
-                  // Allow for external modifications of each cell
-                  var cellOptions = {
-                    mode: mode,
-                    adjacent: adjacent,
-                    disabled: disabled,
-                    active: active,
-                    today: isToday
-                  };
-                  formatter.cell(cell, cellDate, cellOptions);
 
                   if (module.helper.dateEqual(cellDate, focusDate, mode)) {
                     //ensure that the focus date is exactly equal to the cell date
@@ -657,14 +657,14 @@ $.fn.calendar = function(parameters) {
             date = module.helper.sanitiseDate(date);
             date = module.helper.dateInRange(date);
 
-            var mode = module.get.mode();
             var text = formatter.datetime(date, settings);
-            if (fireChange && settings.onChange.call(element, date, text, mode) === false) {
+            if (fireChange && settings.onChange.call(element, date, text, updateInput) === false) {
               return false;
             }
 
             module.set.focusDate(date);
 
+            var mode = module.get.mode();
             if (settings.isDisabled(date, mode)) {
               return false;
             }
@@ -1229,8 +1229,6 @@ $.fn.calendar.settings = {
     },
     today: function (settings) {
       return settings.type === 'date' ? settings.text.today : settings.text.now;
-    },
-    cell: function (cell, date, cellOptions) {
     }
   },
 
@@ -1437,7 +1435,7 @@ $.fn.calendar.settings = {
   },
 
   // callback when date changes, return false to cancel the change
-  onChange: function (date, text, mode) {
+  onChange: function (date, text, updateInput) {
     return true;
   },
 

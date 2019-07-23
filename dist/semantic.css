@@ -38282,7 +38282,7 @@ body.dimmable > .dimmer {
   transition: 800ms filter ease, 800ms -webkit-filter ease;
 }
 
-.blurring.dimmed.dimmable > :not(.dimmer) {
+.blurring.dimmed.dimmable > :not(.dimmer):not(.popup) {
   -webkit-filter: blur(5px) grayscale(0.7);
   filter: blur(5px) grayscale(0.7);
 }
@@ -41009,11 +41009,11 @@ select.ui.dropdown {
     padding-right: 2.25rem !important;
   }
 
-  .ui.overlay.fullscreen.modal .content.content.content {
+  .ui.overlay.fullscreen.modal > .content.content.content {
     min-height: calc(100vh - 8.1rem);
   }
 
-  .ui.overlay.fullscreen.modal .scrolling.content.content.content {
+  .ui.overlay.fullscreen.modal > .scrolling.content.content.content {
     max-height: calc(100vh - 8.1rem);
   }
 
@@ -41226,16 +41226,16 @@ select.ui.dropdown {
 
 /* Scrolling Content */
 
-.ui.modal .scrolling.content {
+.ui.modal > .scrolling.content {
   max-height: calc(80vh - 10rem);
   overflow: auto;
 }
 
-.ui.overlay.fullscreen.modal .content {
+.ui.overlay.fullscreen.modal > .content {
   min-height: calc(100vh - 9.1rem);
 }
 
-.ui.overlay.fullscreen.modal .scrolling.content {
+.ui.overlay.fullscreen.modal > .scrolling.content {
   max-height: calc(100vh - 9.1rem);
 }
 

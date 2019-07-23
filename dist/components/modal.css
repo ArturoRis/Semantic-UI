@@ -235,10 +235,10 @@
     padding: 0.75rem 1rem !important;
     padding-right: 2.25rem !important;
   }
-  .ui.overlay.fullscreen.modal .content.content.content {
+  .ui.overlay.fullscreen.modal > .content.content.content {
     min-height: calc(100vh - 8.1rem);
   }
-  .ui.overlay.fullscreen.modal .scrolling.content.content.content {
+  .ui.overlay.fullscreen.modal > .scrolling.content.content.content {
     max-height: calc(100vh - 8.1rem);
   }
   .ui.modal > .content {
@@ -425,14 +425,14 @@
 }
 
 /* Scrolling Content */
-.ui.modal .scrolling.content {
+.ui.modal > .scrolling.content {
   max-height: calc(80vh - 10rem);
   overflow: auto;
 }
-.ui.overlay.fullscreen.modal .content {
+.ui.overlay.fullscreen.modal > .content {
   min-height: calc(100vh - 9.1rem);
 }
-.ui.overlay.fullscreen.modal .scrolling.content {
+.ui.overlay.fullscreen.modal > .scrolling.content {
   max-height: calc(100vh - 9.1rem);
 }
 
